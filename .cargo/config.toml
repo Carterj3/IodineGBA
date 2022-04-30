@@ -1,0 +1,17 @@
+[build]
+
+[target.armv7-unknown-linux-musleabihf]
+linker = "arm-linux-gnueabihf-ld"
+
+## Raspi-4 specific flag
+# rustflags = "-C target-cpu=cortex-a72"
+
+## Raspi-3 specific flag
+# rustflags = "-C target-cpu=cortex-a53"
+
+# cargo build --release --target x86_64-unknown-linux-musl
+## rustup target add x86_64-unknown-linux-musl
+## brew install filosottile/musl-cross/musl-cross
+[target.x86_64-unknown-linux-musl]
+linker = "x86_64-linux-musl-gcc"  
+

@@ -1,0 +1,19 @@
+[package]
+name = "state-wasm"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies.wasm-bindgen] # https://github.com/rustwasm/wasm-bindgen
+# MIT / APACHE-2.0
+# Used to generate WASM bindings for the `network` crate
+version = "0.2.80"
+features = ["serde-serialize"]
+
+[dependencies.serde] # https://github.com/serde-rs/serde
+# MIT / APACHE-2.0
+# Used for deriving de/serialization
+version =  "1.0"
+features = ["derive"]

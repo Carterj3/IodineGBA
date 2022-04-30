@@ -1,0 +1,78 @@
+[package]
+name = "server"
+version = "0.1.0"
+edition = "2021"
+ 
+[dependencies]
+network = { path = "../network"}
+
+[dependencies.backtrace] # https://github.com/rust-lang/backtrace-rs
+# MIT / APACHE-2.0
+# Use for getting a stack trace easily
+version = "0.3.61" 
+
+[dependencies.bincode] # https://github.com/bincode-org/bincode
+# MIT
+# Used for pattern matching on it's error type
+version = "1.3.3"
+
+[dependencies.clap] # https://github.com/clap-rs/clap
+# MIT / APACHE-2.0
+# Use for logging macros
+version =  "3.1.12"
+features = ["derive"]
+
+[dependencies.log] # https://github.com/rust-lang/log
+# MIT / APACHE-2.0
+# Use for logging macros
+version = "0.4.8" 
+
+[dependencies.env_logger] # https://github.com/sebasmagri/env_logger
+# MIT / APACHE-2.0
+# For logging to console
+version = "0.7.1"   
+
+[dependencies.futures] # https://github.com/rust-lang/futures-rs
+# MIT / APACHE-2.0
+# Tokio / Warp use these types
+version =  "0.3"
+default-features = false
+features = ["alloc"] 
+
+[dependencies.futures-util] # https://github.com/rust-lang/futures-rs
+# MIT / APACHE-2.0
+# Tokio / Warp use these types
+version =  "0.3"
+default-features = false
+features = ["sink"] 
+
+[dependencies.rand] # https://github.com/rust-random/rand
+# MIT / APACHE-2.0
+# Used for rng
+version = "0.7"
+
+[dependencies.tokio] # https://github.com/tokio-rs/tokio
+# MIT
+# Used by warp
+version =  "1.0"
+features = ["macros", "time", "rt-multi-thread"] 
+
+[dependencies.tokio-tungstenite] # https://github.com/snapview/tokio-tungstenite
+# MIT
+# Used to create websockets from a binary to another
+version =  "0.16.1" 
+
+[dependencies.warp] # https://github.com/seanmonstar/warp
+# MIT 
+# Used as a webserver
+version = "0.3.2"
+
+[dependencies.http]  
+## TODO: Why do I need to do this? Using `warp::reply::Response::builder()` gave an error.
+version =  "0.2.3"
+
+[dependencies.serde] # https://github.com/serde-rs/serde
+# MIT / APACHE-2.0
+# Used for deriving de/serialization
+version =  "1.0"
+features = ["derive"]

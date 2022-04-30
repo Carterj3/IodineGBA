@@ -9,6 +9,8 @@
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 function registerGUIEvents() {
+    var localSaveState = null;
+
     //Catch any play status changes:
     IodineGUI.Iodine.attachPlayStatusHandler(updatePlayButton);
     //Add DOM events:
@@ -192,56 +194,126 @@ function registerGUIEvents() {
         IodineGUI.toMapIndice = 7;
     });
     addEvent("change", document.getElementById("import"), function (e) {
-             if (typeof this.files != "undefined") {
-                try {
-                    if (this.files.length >= 1) {
-                        writeRedTemporaryText("Reading the local file \"" + this.files[0].name + "\" for importing.");
-                        try {
-                            //Gecko 1.9.2+ (Standard Method)
-                            var binaryHandle = new FileReader();
-                            binaryHandle.onload = function () {
-                                if (this.readyState == 2) {
-                                    writeRedTemporaryText("file imported.");
-                                    try {
-                                        import_save(this.result);
-                                    }
-                                    catch (error) {
-                                        writeRedTemporaryText(error.message + " file: " + error.fileName + " line: " + error.lineNumber);
-                                    }
+        if (typeof this.files != "undefined") {
+            try {
+                if (this.files.length >= 1) {
+                    writeRedTemporaryText("Reading the local file \"" + this.files[0].name + "\" for importing.");
+                    try {
+                        //Gecko 1.9.2+ (Standard Method)
+                        var binaryHandle = new FileReader();
+                        binaryHandle.onload = function () {
+                            if (this.readyState == 2) {
+                                writeRedTemporaryText("file imported.");
+                                try {
+                                    import_save(this.result);
                                 }
-                                else {
-                                    writeRedTemporaryText("importing file, please wait...");
+                                catch (error) {
+                                    writeRedTemporaryText(error.message + " file: " + error.fileName + " line: " + error.lineNumber);
                                 }
                             }
-                            binaryHandle.readAsBinaryString(this.files[this.files.length - 1]);
+                            else {
+                                writeRedTemporaryText("importing file, please wait...");
+                            }
+                        }
+                        binaryHandle.readAsBinaryString(this.files[this.files.length - 1]);
+                    }
+                    catch (error) {
+                        //Gecko 1.9.0, 1.9.1 (Non-Standard Method)
+                        var romImageString = this.files[this.files.length - 1].getAsBinary();
+                        try {
+                            import_save(romImageString);
                         }
                         catch (error) {
-                            //Gecko 1.9.0, 1.9.1 (Non-Standard Method)
-                            var romImageString = this.files[this.files.length - 1].getAsBinary();
-                            try {
-                                import_save(romImageString);
-                            }
-                            catch (error) {
-                                writeRedTemporaryText(error.message + " file: " + error.fileName + " line: " + error.lineNumber);
-                            }
+                            writeRedTemporaryText(error.message + " file: " + error.fileName + " line: " + error.lineNumber);
                         }
                     }
-                    else {
-                        writeRedTemporaryText("Incorrect number of files selected for local loading.");
+                }
+                else {
+                    writeRedTemporaryText("Incorrect number of files selected for local loading.");
+                }
+            }
+            catch (error) {
+                writeRedTemporaryText("Could not load in a locally stored ROM file.");
+            }
+        }
+        else {
+            writeRedTemporaryText("could not find the handle on the file to open.");
+        }
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+    });
+    addEvent("change", document.getElementById("import-save-state"), function (e) {
+        if (typeof this.files != "undefined") {
+            try {
+                if (this.files.length >= 1) {
+                    writeRedTemporaryText("Reading the local file \"" + this.files[0].name + "\" for importing.");
+                    try {
+                        //Gecko 1.9.2+ (Standard Method)
+                        var binaryHandle = new FileReader();
+                        binaryHandle.onload = function () {
+                            if (this.readyState == 2) {
+                                writeRedTemporaryText("file imported.");
+                                try {
+                                    importSaveState(this.result);
+                                }
+                                catch (error) {
+                                    writeRedTemporaryText(error.message + " file: " + error.fileName + " line: " + error.lineNumber);
+                                }
+                            }
+                            else {
+                                writeRedTemporaryText("importing file, please wait...");
+                            }
+                        }
+                        binaryHandle.readAsBinaryString(this.files[this.files.length - 1]);
+                    }
+                    catch (error) {
+                        //Gecko 1.9.0, 1.9.1 (Non-Standard Method)
+                        var result = this.files[this.files.length - 1].getAsBinary();
+                        try {
+                            importSaveState(result);
+                        }
+                        catch (error) {
+                            writeRedTemporaryText(error.message + " file: " + error.fileName + " line: " + error.lineNumber);
+                        }
                     }
                 }
-                catch (error) {
-                    writeRedTemporaryText("Could not load in a locally stored ROM file.");
+                else {
+                    writeRedTemporaryText("Incorrect number of files selected for local loading.");
                 }
-             }
-             else {
-                writeRedTemporaryText("could not find the handle on the file to open.");
-             }
-             if (e.preventDefault) {
-                e.preventDefault();
-             }
+            }
+            catch (error) {
+                writeRedTemporaryText("Could not load in a locally stored ROM file.");
+            }
+        }
+        else {
+            writeRedTemporaryText("could not find the handle on the file to open.");
+        }
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
     });
     addEvent("click", document.getElementById("export"), refreshStorageListing);
+    addEvent("click", document.getElementById("take-save-state"), function (e) {
+        localSaveState = fastSave();
+    });
+    addEvent("click", document.getElementById("restore-save-state"), function (e) {
+        if (localSaveState) {
+            fastLoad(localSaveState);
+        }
+    });
+    addEvent("click", document.getElementById("export-save-state"), function (e) {
+        const blob = exportSaveState();
+
+        const a = window.document.createElement('a');
+        a.href = window.URL.createObjectURL(new Blob([blob], { type: 'application/octet-stream' }));
+        a.download = `${Date.now()}.savestate`;
+
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+    });
     addEvent("unload", window, ExportSave);
     IodineGUI.Iodine.attachSpeedHandler(function (speed) {
         speed = speed.toFixed(2);
@@ -455,7 +527,7 @@ function registerGUISettings() {
         volControl.step = 1;
         volControl.value = IodineGUI.defaults.volume * 100;
     }
-    catch (e) {}
+    catch (e) { }
     IodineGUI.mixerInput.setVolume(IodineGUI.defaults.volume);
     document.getElementById("skip_boot").checked = IodineGUI.defaults.skipBoot;
     IodineGUI.Iodine.toggleSkipBootROM(IodineGUI.defaults.skipBoot);
@@ -565,7 +637,7 @@ function rebuildSavesMenu(e) {
         ExportSave();
         rebuildExistingSaves();
         if (e.preventDefault) {
-           e.preventDefault();
+            e.preventDefault();
         }
     }
 }
@@ -641,10 +713,10 @@ function didNotEnter(oElement, event) {
         }
         target = target.parentElement;
     }
-	return true;
+    return true;
 }
 function isSameNode(oCheck1, oCheck2) {
-	return (typeof oCheck1.isSameNode == "function") ? oCheck1.isSameNode(oCheck2) : (oCheck1 === oCheck2);
+    return (typeof oCheck1.isSameNode == "function") ? oCheck1.isSameNode(oCheck2) : (oCheck1 === oCheck2);
 }
 function addEvent(sEvent, oElement, fListener) {
     try {

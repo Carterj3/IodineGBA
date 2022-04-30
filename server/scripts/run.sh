@@ -1,0 +1,1 @@
+sudo RUST_LOG=debug ./mengs

@@ -1,0 +1,17 @@
+[workspace]
+members = [ 
+    "network",
+    "network-wasm", 
+    "server",
+    "state-wasm", 
+]
+
+[profile.release]
+opt-level = 3
+panic = "unwind"
+
+[profile.dev]
+panic = "unwind"
+
+[toolchain]
+components = [ "rust-src" ]

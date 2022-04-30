@@ -1,0 +1,20 @@
+[package]
+name = "wasm-network"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+network = { path = "../network"}
+
+[dependencies.wasm-bindgen] # https://github.com/rustwasm/wasm-bindgen
+# MIT / APACHE-2.0
+# Used to generate WASM bindings for the `network` crate
+version = "0.2.80"
+
+[dependencies.js-sys] # https://github.com/rustwasm/wasm-bindgen/tree/main/crates/js-sys
+# MIT / APACHE-2.0
+# Used to generate WASM bindings for the `network` crate
+version = "0.3.57" 
