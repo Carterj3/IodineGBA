@@ -62,7 +62,7 @@ impl ChunkedDelta {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct DeltaSnapshot {
     old_hash: [u8; 2],
-    chunks: BTreeMap<u8, Vec<ChunkedDelta>>,
+    chunks: BTreeMap<u32, Vec<ChunkedDelta>>,
 }
 
 impl DeltaSnapshot {
@@ -82,7 +82,7 @@ impl DeltaSnapshot {
             .enumerate()
             .filter(|(_, (old_value, new_value))| old_value != new_value)
             .for_each(|(index, (_, new_value))| {
-                let chunk = (index / (u8::MAX as usize)) as u8;
+                let chunk = (index / (u8::MAX as usize)) as u32;
                 let offset = (index % (u8::MAX as usize)) as u8;
 
                 chunks
@@ -181,24 +181,18 @@ mod tests {
     use crate::DeltaSnapshot;
 
     #[test]
-    fn test_delta_snapshot() {
+    #[allow(non_snake_case)]
+    fn test_delta_snapshot__regression() {
         let mut old = Vec::new();
         let mut new = Vec::new();
 
-        for i in 0..u8::MAX {
-            old.push(i);
-            old.push(u8::MAX - i);
-            old.push(u8::MAX - i);
-            old.push(u8::MAX - i);
-            old.push(i);
-            old.push(i);
+        let mut i = 0u8;
+        for _ in 0..1747430 {
+            old.push(i); 
+ 
+            new.push(u8::MAX - i);
 
-            new.push(i);
-            new.push(i);
-            new.push(i);
-            new.push(i);
-            new.push(u8::MAX - i);
-            new.push(u8::MAX - i);
+            i = i.wrapping_add(1);
         }
 
         let snapshot = DeltaSnapshot::new(&old, &new);
