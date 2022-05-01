@@ -52,10 +52,23 @@ function fileLoadShimCode(files, ROMHandler) {
     }
 }
 function fileLoadBIOS() {
-    fileLoadShimCode(this.files, attachBIOS);
+    fileLoadShimCode(this.files, bios => {
+        const SaveStates = IodineGUI.Iodine.SaveStates;
+        SaveStates.websocket.send(
+            SaveStates.network.create_bios_message(new Uint8Array(bios)));
+
+
+        attachBIOS(bios);
+    });
 }
 function fileLoadROM() {
-    fileLoadShimCode(this.files, attachROM);
+    fileLoadShimCode(this.files, rom => {
+        const SaveStates = IodineGUI.Iodine.SaveStates;
+        SaveStates.websocket.send(
+            SaveStates.network.create_rom_message(new Uint8Array(rom)));
+
+        attachROM(rom);
+    });
 }
 function downloadFile(fileName, registrationHandler) {
     var ajax = new XMLHttpRequest();

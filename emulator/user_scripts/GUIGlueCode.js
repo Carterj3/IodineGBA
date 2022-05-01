@@ -9,8 +9,6 @@
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 function registerGUIEvents() {
-    var localSaveState = null;
-
     //Catch any play status changes:
     IodineGUI.Iodine.attachPlayStatusHandler(updatePlayButton);
     //Add DOM events:
@@ -294,25 +292,71 @@ function registerGUIEvents() {
         }
     });
     addEvent("click", document.getElementById("export"), refreshStorageListing);
-    addEvent("click", document.getElementById("take-save-state"), function (e) {
-        localSaveState = fastSave();
+    addEvent("click", document.getElementById("take-save-state-1"), function (e) {
+        IodineGUI.Iodine.SaveStates.save1 = fastSave();
     });
-    addEvent("click", document.getElementById("restore-save-state"), function (e) {
-        if (localSaveState) {
-            fastLoad(localSaveState);
+    addEvent("click", document.getElementById("restore-save-state-1"), function (e) {
+        const SaveStates = IodineGUI.Iodine.SaveStates;
+        const state = SaveStates.save1;
+        if (state) {
+            fastLoad(state);
+            SaveStates.websocket.send(SaveStates.network.create_snapshot_message(SaveStates.snapshotter.serialize_to_uint8array(state)));
+            SaveStates.localSaveState = state;
+        }
+    });
+    addEvent("click", document.getElementById("export-save-state-1"), function (e) {
+        const state = IodineGUI.Iodine.SaveStates.save1;
+        if (state) {
+            const blob = exportSaveState(state);
+
+            const a = window.document.createElement('a');
+            a.href = window.URL.createObjectURL(new Blob([blob], { type: 'application/octet-stream' }));
+            a.download = `${Date.now()}.savestate`;
+
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    });
+    addEvent("click", document.getElementById("take-save-state-2"), function (e) {
+        IodineGUI.Iodine.SaveStates.save2 = fastSave();
+    });
+    addEvent("click", document.getElementById("restore-save-state-2"), function (e) {
+        const SaveStates = IodineGUI.Iodine.SaveStates;
+        const state = SaveStates.save2;
+        if (state) {
+            fastLoad(state);
+            SaveStates.websocket.send(SaveStates.network.create_snapshot_message(SaveStates.snapshotter.serialize_to_uint8array(state)));
+            SaveStates.localSaveState = state;
+        }
+    });
+    addEvent("click", document.getElementById("export-save-state-2"), function (e) {
+        const state = IodineGUI.Iodine.SaveStates.save2;
+        if (state) {
+            const blob = exportSaveState(state);
+
+            const a = window.document.createElement('a');
+            a.href = window.URL.createObjectURL(new Blob([blob], { type: 'application/octet-stream' }));
+            a.download = `${Date.now()}.savestate`;
+
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         }
     });
     addEvent("click", document.getElementById("export-save-state"), function (e) {
-        const blob = exportSaveState();
+        const state = IodineGUI.Iodine.SaveStates.localSaveState;
+        if (state) {
+            const blob = exportSaveState(state);
 
-        const a = window.document.createElement('a');
-        a.href = window.URL.createObjectURL(new Blob([blob], { type: 'application/octet-stream' }));
-        a.download = `${Date.now()}.savestate`;
+            const a = window.document.createElement('a');
+            a.href = window.URL.createObjectURL(new Blob([blob], { type: 'application/octet-stream' }));
+            a.download = `${Date.now()}.savestate`;
 
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
     });
     addEvent("unload", window, ExportSave);
     IodineGUI.Iodine.attachSpeedHandler(function (speed) {

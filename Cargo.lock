@@ -183,6 +183,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "console_error_panic_hook"
+version = "0.1.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a06aeb73f470f66dcdbf7223caeebb85984942f22f1adb2a088cf9668146bbbc"
+dependencies = [
+ "cfg-if",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "cpufeatures"
 version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -645,6 +655,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "network-wasm"
+version = "0.1.0"
+dependencies = [
+ "console_error_panic_hook",
+ "js-sys",
+ "log",
+ "network",
+ "wasm-bindgen",
+ "wasm-bindgen-console-logger",
+]
+
+[[package]]
 name = "ntapi"
 version = "0.3.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1019,8 +1041,15 @@ dependencies = [
 name = "state-wasm"
 version = "0.1.0"
 dependencies = [
+ "b64",
+ "backtrace",
+ "bincode",
+ "console_error_panic_hook",
+ "js-sys",
+ "log",
  "serde",
  "wasm-bindgen",
+ "wasm-bindgen-console-logger",
 ]
 
 [[package]]
@@ -1435,6 +1464,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "wasm-bindgen-console-logger"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7530a275e7faf7b5b83aabdf78244fb8d9a68a2ec4b26935a05ecc0c9b0185ed"
+dependencies = [
+ "log",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "wasm-bindgen-macro"
 version = "0.2.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1462,15 +1501,6 @@ name = "wasm-bindgen-shared"
 version = "0.2.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d554b7f530dee5964d9a9468d95c1f8b8acae4f282807e7d27d4b03099a46744"
-
-[[package]]
-name = "wasm-network"
-version = "0.1.0"
-dependencies = [
- "js-sys",
- "network",
- "wasm-bindgen",
-]
 
 [[package]]
 name = "winapi"

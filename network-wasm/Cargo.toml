@@ -1,5 +1,5 @@
 [package]
-name = "wasm-network"
+name = "network-wasm"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,6 +8,10 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 network = { path = "../network"}
+
+console_error_panic_hook = { version = "0.1.1" }
+wasm-bindgen-console-logger = "0.1.1"
+log = "0.4.8"
 
 [dependencies.wasm-bindgen] # https://github.com/rustwasm/wasm-bindgen
 # MIT / APACHE-2.0

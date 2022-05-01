@@ -5,6 +5,7 @@ cd "`dirname -- "$0"`"
 # Build files
 ## WASM
 ( cd network-wasm && wasm-pack build --release --target web )
+( cd state-wasm && wasm-pack build --release --target web )
 
 # Clear output files
 rm -rf ./www/*
@@ -27,6 +28,10 @@ cp -r ./emulator/index.html www/index.html
 ## WASM
 mkdir -p ./www/network/
 cp -r ./network-wasm/pkg/* www/network
+
+
+mkdir -p ./www/state/
+cp -r ./state-wasm/pkg/* www/state
 
 # Run
 ( cargo build && RUST_LOG=debug ./target/debug/server ./www )

@@ -6,8 +6,6 @@ use ::futures::stream::SplitSink;
 
 use ::futures_util::{SinkExt, StreamExt};
 
-use ::http::response::Response;
-
 use ::tokio::sync::{oneshot, RwLock};
 
 use ::warp::{ws::WebSocket, Filter};
@@ -22,7 +20,7 @@ use ::std::{
 };
 use std::path::PathBuf;
 
-use ::network::{ArrayDelta, Message};
+use ::network::{DeltaSnapshot, Message};
 
 #[derive(Parser, Debug)]
 struct Args {
@@ -114,9 +112,25 @@ impl Services {
     async fn broadcast_delta_snapshot(
         &mut self,
         sender_id: usize,
-        snapshot: Vec<ArrayDelta>,
+        snapshot: DeltaSnapshot,
     ) -> Result<(), BroadcastError> {
         let data: String = Message::DeltaSnapshot(snapshot).try_into()?;
+
+        for (id, tx) in self.listeners.iter_mut() {
+            if *id != sender_id {
+                tx.send(::warp::ws::Message::text(&data)).await?;
+            }
+        }
+
+        Ok(())
+    }
+
+    async fn broadcast_play(
+        &mut self,
+        sender_id: usize,
+        snapshot: Vec<u8>,
+    ) -> Result<(), BroadcastError> {
+        let data: String = Message::Play(snapshot).try_into()?;
 
         for (id, tx) in self.listeners.iter_mut() {
             if *id != sender_id {
@@ -151,7 +165,7 @@ async fn main() {
     let args = Args::parse();
 
     let is_running_flag = Arc::new(AtomicBool::new(true));
-    let (warp_shutdown_tx, warp_shutdown_rx) = oneshot::channel::<()>();
+    let (_warp_shutdown_tx, warp_shutdown_rx) = oneshot::channel::<()>();
 
     let services: Arc<RwLock<Services>> = Arc::new(RwLock::new(Services::new()));
     let services_filter = {
@@ -160,92 +174,7 @@ async fn main() {
     };
 
     let warp_task = {
-        let inline_paths = {
-            // let bootstrap_css = warp::get()
-            //     .and(warp::path("bootstrap.min.css"))
-            //     .and(warp::path::end())
-            //     .map(move || {
-            //         Response::builder()
-            //             .status(200)
-            //             .header("content-type", "text/css; charset=utf-8")
-            //             .body(server::html::BOOTSTRAP_CSS)
-            //             .expect("Bootstrap.css was not bundled correctly")
-            //     });
-            // let bootstrap_css_map = warp::get()
-            //     .and(warp::path("bootstrap.min.css.map"))
-            //     .and(warp::path::end())
-            //     .map(move || {
-            //         Response::builder()
-            //             .status(200)
-            //             .header("content-type", "application/json; charset=utf-8")
-            //             .body(server::html::BOOTSTRAP_CSS_MAP)
-            //             .expect("Bootstrap.css.map was not bundled correctly")
-            //     });
-
-            // let bootstrap_js = warp::get()
-            //     .and(warp::path("bootstrap.min.js"))
-            //     .and(warp::path::end())
-            //     .map(move || {
-            //         Response::builder()
-            //             .status(200)
-            //             .header("content-type", "application/javascript; charset=utf-8")
-            //             .body(server::html::BOOTSTRAP_JS)
-            //             .expect("Bootstrap.js was not bundled correctly")
-            //     });
-            // let bootstrap_js_map = warp::get()
-            //     .and(warp::path("bootstrap.min.js.map"))
-            //     .and(warp::path::end())
-            //     .map(move || {
-            //         Response::builder()
-            //             .status(200)
-            //             .header("content-type", "application/json; charset=utf-8")
-            //             .body(server::html::BOOTSTRAP_JS_MAP)
-            //             .expect("Bootstrap.js.map was not bundled correctly")
-            //     });
-
-            // let handlebars_js = warp::get()
-            //     .and(warp::path("handlebars.min.js"))
-            //     .and(warp::path::end())
-            //     .map(move || {
-            //         Response::builder()
-            //             .status(200)
-            //             .header("content-type", "application/javascript; charset=utf-8")
-            //             .body(server::html::HANDLEBARS_JS)
-            //             .expect("Handlebars.js was not bundled correctly")
-            //     });
-
-            // let index_html = warp::get()
-            //     .and(warp::path::end())
-            //     .map(|| warp::reply::html(server::html::INDEX_HTML));
-
-            // let wasm_ui_js = warp::get().and(warp::path("wasm_ui.js")).map(move || {
-            //     Response::builder()
-            //         .status(200)
-            //         .header("content-type", "application/javascript; charset=utf-8")
-            //         .body(server::html::WASM_UI_JS)
-            //         .expect("Wasm_ui.js was not bundled correctly")
-            // });
-            // let wasm_ui_bg_js = warp::get().and(warp::path("wasm_ui_bg.js")).map(move || {
-            //     Response::builder()
-            //         .status(200)
-            //         .header("content-type", "application/javascript; charset=utf-8")
-            //         .body(server::html::WASM_UI_BG_JS)
-            //         .expect("Wasm_ui.bg.js was not bundled correctly")
-            // });
-
-            // let wasm_ui_bg_wasm = warp::get()
-            //     .and(warp::path("wasm_ui_bg.wasm"))
-            //     .and(warp::path::end())
-            //     .map(move || {
-            //         Response::builder()
-            //             .status(200)
-            //             .header("content-type", "application/wasm")
-            //             .body(server::html::WASM_UI_BG_WASM)
-            //             .expect("UI WASM was not bundled correctly")
-            //     });
-
-            warp::get().and(warp::fs::dir(args.www_dir))
-        };
+        let inline_paths = { warp::get().and(warp::fs::dir(args.www_dir)) };
 
         let websocket = warp::path("websocket")
             .and(warp::ws())
@@ -275,7 +204,7 @@ async fn main() {
     log::error!("Server has stopped.");
 }
 
-async fn on_websocket(ws: WebSocket, remote: Option<SocketAddr>, services: Arc<RwLock<Services>>) {
+async fn on_websocket(ws: WebSocket, _remote: Option<SocketAddr>, services: Arc<RwLock<Services>>) {
     let (tx, mut rx) = ws.split();
 
     let id = services.write().await.add_listener(tx);
@@ -306,6 +235,14 @@ async fn on_websocket(ws: WebSocket, remote: Option<SocketAddr>, services: Arc<R
 
                         match services.write().await.set_rom(id, rom).await {
                             Err(e) => log::error!("Failed to send rom: {:?}", e),
+                            _ => {}
+                        }
+                    }
+                    Ok(Message::Play(snapshot)) => {
+                        log::info!("Play -- {:?}", snapshot.len());
+
+                        match services.write().await.broadcast_play(id, snapshot).await {
+                            Err(e) => log::error!("Failed to send delta: {:?}", e),
                             _ => {}
                         }
                     }

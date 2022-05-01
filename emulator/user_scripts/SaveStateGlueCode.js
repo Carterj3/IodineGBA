@@ -548,21 +548,21 @@ const unchangeStateKeys = [
     // "IOCore.saves.EEPROMChip.buffer",
     // "IOCore.saves.EEPROMChip.largestSizePossible",
     // "IOCore.saves.EEPROMChip.mode",
-    // "IOCore.saves.FLASHChip.BANKOffset",
-    // "IOCore.saves.FLASHChip.flashCommand",
-    // "IOCore.saves.FLASHChip.flashCommandUnlockStage",
-    // "IOCore.saves.FLASHChip.largestSizePossible",
-    // "IOCore.saves.FLASHChip.notATMEL",
-    // "IOCore.saves.FLASHChip.saves",
-    // "IOCore.saves.FLASHChip.writeBytesLeft",
+    "IOCore.saves.FLASHChip.BANKOffset",
+    "IOCore.saves.FLASHChip.flashCommand",
+    "IOCore.saves.FLASHChip.flashCommandUnlockStage",
+    "IOCore.saves.FLASHChip.largestSizePossible",
+    "IOCore.saves.FLASHChip.notATMEL",
+    "IOCore.saves.FLASHChip.saves",
+    "IOCore.saves.FLASHChip.writeBytesLeft",
     // "IOCore.saves.GPIOChip.data",
     // "IOCore.saves.GPIOChip.direction",
     // "IOCore.saves.GPIOChip.readWrite",
     // "IOCore.saves.GPIOChip.type",
     // "IOCore.saves.saveType",
-    // "IOCore.saves.SRAMChip.saves",
-    // "IOCore.saves.SRAMChip.TILTChip",
-    // "IOCore.saves.SRAMChip.TILTChipUnlocked",
+    "IOCore.saves.SRAMChip.saves",
+    "IOCore.saves.SRAMChip.TILTChip",
+    "IOCore.saves.SRAMChip.TILTChipUnlocked",
     // "IOCore.saves.UNDETERMINED.possible",
     // "IOCore.serial.JOYBUS_CNTL_FLAGS",
     // "IOCore.serial.JOYBUS_IRQ",
@@ -729,6 +729,17 @@ const unchangeStateKeys = [
 let saveStateKeys = uniqueStateKeys
     .filter(key => !unchangeStateKeys.includes(key));
 
+function withEmulatorPaused(fn) {
+    const iodine = IodineGUI.Iodine;
+
+    const previousStatus = iodine.emulatorStatus;
+    iodine.emulatorStatus = 21;
+
+    fn();
+
+    iodine.emulatorStatus = previousStatus;
+}
+
 function fastLoad(fastSaveState) {
     function write(object, key, value) {
         const valueType = typeof value;
@@ -765,27 +776,21 @@ function fastLoad(fastSaveState) {
                 throw new Error(`Unhandled type: '${valueType}' - key: '${key}' - object: ${object}`);
         }
     }
-
     const iodine = IodineGUI.Iodine;
-    const wasPaused = iodine.emulatorStatus == 21;
-    if (!wasPaused) {
-        iodine.pause();
-    }
 
-    for (key of saveStateKeys) {
-        const parts = key.split('.');
-        const lastPart = parts.splice(parts.length - 1)[0];
-        let object = iodine;
-        for (part of parts) {
-            object = object[part];
+    withEmulatorPaused(() => {
+        for (key of saveStateKeys) {
+            const parts = key.split('.');
+            const lastPart = parts.splice(parts.length - 1)[0];
+            let object = iodine;
+            for (part of parts) {
+                object = object[part];
+            }
+
+            write(object, lastPart, fastSaveState[key]);
         }
-
-        write(object, lastPart, fastSaveState[key]);
     }
-
-    if (!wasPaused) {
-        iodine.play();
-    }
+    );
 }
 
 function fastSave() {
@@ -817,37 +822,30 @@ function fastSave() {
                 throw new Error(`Unhandled type: '${valueType}' - key: '${key}' - value: ${value}`);
         }
     }
-
     const iodine = IodineGUI.Iodine;
-    const wasPaused = iodine.emulatorStatus == 21;
-    if (!wasPaused) {
-        iodine.pause();
-    }
-
     let state = {};
-    for (key of saveStateKeys) {
-        const parts = key.split('.');
-        const lastPart = parts.splice(parts.length - 1)[0];
-        let object = iodine;
-        for (part of parts) {
-            object = object[part];
+
+    withEmulatorPaused(() => {
+        for (key of saveStateKeys) {
+            const parts = key.split('.');
+            const lastPart = parts.splice(parts.length - 1)[0];
+            let object = iodine;
+            for (part of parts) {
+                object = object[part];
+            }
+
+            read(object[lastPart], key, state);
         }
-
-        read(object[lastPart], key, state);
-    }
-
-    if (!wasPaused) {
-        iodine.play();
-    }
+    });
 
     return state;
 }
 
 function importSaveState(blob) {
-    fastLoad(JSON.parse(blob));
+    fastLoad(IodineGUI.Iodine.SaveStates.snapshotter.deserialize_from_b64(blob));
 }
 
-function exportSaveState() {
-    return JSON.stringify(fastSave());
+function exportSaveState(blob) {
+    return IodineGUI.Iodine.SaveStates.snapshotter.serialize_to_b64(blob);
 }
 

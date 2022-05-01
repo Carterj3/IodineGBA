@@ -1,6 +1,22 @@
+use ::network::{DeltaSnapshot, Message};
+
+use std::sync::Once;
+
 use wasm_bindgen::prelude::*;
 
-use ::network::{ArrayDelta, Message};
+#[wasm_bindgen]
+pub fn network_init() {
+    static SET_HOOK: Once = Once::new();
+
+    SET_HOOK.call_once(|| {
+        use wasm_bindgen_console_logger::DEFAULT_LOGGER;
+
+        console_error_panic_hook::set_once();
+
+        log::set_logger(&DEFAULT_LOGGER).unwrap();
+        log::set_max_level(log::LevelFilter::Info);
+    });
+}
 
 #[wasm_bindgen]
 pub struct MessageWrapper(Message);
@@ -14,9 +30,9 @@ impl MessageWrapper {
         }
     }
 
-    pub fn get_bios(self) -> Vec<u8> {
+    pub fn get_bios(self) -> js_sys::Uint8Array {
         match self.0 {
-            Message::Bios(bios) => bios,
+            Message::Bios(bios) => js_sys::Uint8Array::from(bios.as_ref()),
             _ => unreachable!("Call `is_bios` first."),
         }
     }
@@ -28,10 +44,24 @@ impl MessageWrapper {
         }
     }
 
-    pub fn get_rom(self) -> Vec<u8> {
+    pub fn get_rom(self) -> js_sys::Uint8Array {
         match self.0 {
-            Message::Rom(rom) => rom,
+            Message::Rom(rom) => js_sys::Uint8Array::from(rom.as_ref()),
             _ => unreachable!("Call `is_rom` first."),
+        }
+    }
+
+    pub fn is_play(&self) -> bool {
+        match self.0 {
+            Message::Play(_) => true,
+            _ => false,
+        }
+    }
+
+    pub fn get_play(self) -> js_sys::Uint8Array  {
+        match self.0 {
+            Message::Play(snapshot) => js_sys::Uint8Array::from(snapshot.as_ref()),
+            _ => unreachable!("Call `is_play` first."),
         }
     }
 
@@ -42,16 +72,9 @@ impl MessageWrapper {
         }
     }
 
-    pub fn get_delta_snapshot(self, old_array: &[u8]) -> Vec<u8> {
+    pub fn get_delta_snapshot(self, old_array: &[u8]) -> js_sys::Uint8Array  {
         match self.0 {
-            Message::DeltaSnapshot(delta_array) => {
-                let mut new_array = Vec::from(old_array);
-                for delta in delta_array.iter() {
-                    new_array[delta.index() as usize] = delta.value();
-                }
-
-                new_array
-            }
+            Message::DeltaSnapshot(delta_snapshot) => js_sys::Uint8Array::from(delta_snapshot.apply(old_array).as_ref()),
             _ => unreachable!("Call `is_delta_snapshot` first."),
         }
     }
@@ -63,9 +86,9 @@ impl MessageWrapper {
         }
     }
 
-    pub fn get_snapshot(self) -> Vec<u8> {
+    pub fn get_snapshot(self) -> js_sys::Uint8Array  {
         match self.0 {
-            Message::Snapshot(snapshot) => snapshot,
+            Message::Snapshot(snapshot) => js_sys::Uint8Array::from(snapshot.as_ref()),
             _ => unreachable!("Call `is_snapshot` first."),
         }
     }
@@ -85,26 +108,23 @@ impl Network {
         MessageWrapper(Message::try_from(data).unwrap())
     }
 
-    pub fn create_bios_message(&self, bios: &[u8]) -> String {
-        let message = Message::Bios(Vec::from(bios));
+    pub fn create_bios_message(&self, bios: js_sys::Uint8Array) -> String {
+        let message = Message::Bios(bios.to_vec());
         (&message).try_into().unwrap()
     }
 
-    pub fn create_rom_message(&self, rom: &[u8]) -> String {
-        let message = Message::Rom(Vec::from(rom));
+    pub fn create_rom_message(&self, rom: js_sys::Uint8Array) -> String {
+        let message = Message::Rom(rom.to_vec());
         (&message).try_into().unwrap()
     }
 
-    pub fn create_delta_snapshot_message(&self, old_array: &[u8], new_array: &[u8]) -> String {
-        let array_deltas = old_array
-            .iter()
-            .zip(new_array.iter())
-            .enumerate()
-            .filter(|(_, (old_value, new_value))| old_value != new_value)
-            .map(|(index, (_, new_value))| ArrayDelta::new(index as u32, new_value.clone()))
-            .collect();
+    pub fn create_play_message(&self, snapshot: &[u8]) -> String {
+        let message = Message::Play(Vec::from(snapshot));
+        (&message).try_into().unwrap()
+    }
 
-        let message = Message::DeltaSnapshot(array_deltas);
+    pub fn create_delta_snapshot_message(&self, old_array: js_sys::Uint8Array, new_array: js_sys::Uint8Array) -> String {
+        let message = Message::DeltaSnapshot(DeltaSnapshot::new(old_array.to_vec().as_ref(), new_array.to_vec().as_ref()));
         (&message).try_into().unwrap()
     }
 
