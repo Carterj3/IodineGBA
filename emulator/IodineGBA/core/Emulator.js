@@ -356,9 +356,6 @@ GameBoyAdvanceEmulator.prototype.keyUp = function (keyReleased) {
         const delta_message = SaveStates.network.create_delta_snapshot_message(old_serialized, new_serialized);
         SaveStates.websocket.send(delta_message);
 
-        const new_serialized2 = SaveStates.network.deserialize(delta_message).get_delta_snapshot(old_serialized);
-        const snapshot2 = SaveStates.snapshotter.deserialize_from_uint8array(new_serialized2);
-
         SaveStates.localSaveState = snapshot;
     }
 }
