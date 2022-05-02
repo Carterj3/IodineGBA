@@ -518,118 +518,118 @@ pub struct SaveState {
     iocore_serial_sioshift_clock_external: i32,
     iocore_serial_siotransfer_started: bool,
     iocore_serial_clocks: i32,
-    iocore_sound_agbdirect_sound_a: i32,
-    iocore_sound_agbdirect_sound_afolded: i32,
-    iocore_sound_agbdirect_sound_aleft_can_play: bool,
-    iocore_sound_agbdirect_sound_aright_can_play: bool,
-    iocore_sound_agbdirect_sound_ashifter: i32,
-    iocore_sound_agbdirect_sound_atimer: i32,
-    iocore_sound_agbdirect_sound_b: i32,
-    iocore_sound_agbdirect_sound_bfolded: i32,
-    iocore_sound_agbdirect_sound_bleft_can_play: bool,
-    iocore_sound_agbdirect_sound_bright_can_play: bool,
-    iocore_sound_agbdirect_sound_bshifter: i32,
-    iocore_sound_agbdirect_sound_btimer: i32,
-    iocore_sound_audio_clocks_until_next_event: i32,
-    iocore_sound_audio_clocks_until_next_event_counter: i32,
-    iocore_sound_audio_index: i32,
-    iocore_sound_audio_resampler_first_pass_factor: i32,
-    iocore_sound_audio_ticks: i32,
-    iocore_sound_cgbmixer_output_cache_left: i32,
-    iocore_sound_cgbmixer_output_cache_left_folded: i32,
-    iocore_sound_cgbmixer_output_cache_right: i32,
-    iocore_sound_cgbmixer_output_cache_right_folded: i32,
-    iocore_sound_cgboutput_ratio: i32,
-    iocore_sound_channel1_cached_duty: f64,
-    iocore_sound_channel1_can_play: bool,
-    iocore_sound_channel1_consecutive: bool,
-    iocore_sound_channel1_current_sample_left: i32,
-    iocore_sound_channel1_current_sample_right: i32,
-    iocore_sound_channel1_decrease_sweep: bool,
-    iocore_sound_channel1_duty_tracker: i32,
-    iocore_sound_channel1_enabled: i32,
-    iocore_sound_channel1_envelope_sweeps: i32,
-    iocore_sound_channel1_envelope_sweeps_last: i32,
-    iocore_sound_channel1_envelope_volume: i32,
-    iocore_sound_channel1_frequency: i32,
-    iocore_sound_channel1_frequency_counter: i32,
-    iocore_sound_channel1_frequency_sweep_divider: i32,
-    iocore_sound_channel1_frequency_tracker: i32,
-    iocore_sound_channel1_last_time_sweep: i32,
-    iocore_sound_channel1_left_enable: i32,
-    iocore_sound_channel1_nr10: i32,
-    iocore_sound_channel1_nr11: i32,
-    iocore_sound_channel1_nr12: i32,
-    iocore_sound_channel1_nr14: i32,
-    iocore_sound_channel1_right_enable: i32,
-    iocore_sound_channel1_shadow_frequency: i32,
-    iocore_sound_channel1_sweep_fault: bool,
-    iocore_sound_channel1_swept: bool,
-    iocore_sound_channel1_time_sweep: i32,
-    iocore_sound_channel1_total_length: i32,
-    iocore_sound_channel2_nr21: i32,
-    iocore_sound_channel2_nr22: i32,
-    iocore_sound_channel2_nr23: i32,
-    iocore_sound_channel2_nr24: i32,
-    iocore_sound_channel2_shadow_frequency: i32,
-    iocore_sound_channel3_cached_sample: i32,
-    iocore_sound_channel3_can_play: bool,
-    iocore_sound_channel3_counter: i32,
-    iocore_sound_channel3_frequency_period: i32,
-    iocore_sound_channel3_last_sample_lookup: i32,
-    iocore_sound_channel3_nr30: i32,
-    iocore_sound_channel3_nr31: i32,
-    iocore_sound_channel3_nr32: i32,
-    iocore_sound_channel3_nr33: i32,
-    iocore_sound_channel3_nr34: i32,
-    iocore_sound_channel3_pattern_type: i32,
-    iocore_sound_channel3_pcm: Vec<i8>,
-    iocore_sound_channel3_pcm16: Vec<u16>,
-    iocore_sound_channel3_pcm32: Vec<i32>,
-    iocore_sound_channel3_waveram16: Vec<u16>,
-    iocore_sound_channel3_waveram32: Vec<i32>,
-    iocore_sound_channel3_waveram8: Vec<u8>,
-    iocore_sound_channel3_waverambank_accessed: i32,
-    iocore_sound_channel3_wave_rambank_size: i32,
-    iocore_sound_channel3_waverambank_specified: i32,
-    iocore_sound_channel4_bit_range: i32,
-    iocore_sound_channel4_counter: i32,
-    iocore_sound_channel4_current_volume: i32,
-    iocore_sound_channel4_frequency_period: i32,
-    iocore_sound_channel4_last_sample_lookup: i32,
-    iocore_sound_channel4_lsfr15_table: Vec<i8>,
-    iocore_sound_channel4_lsfr7_table: Vec<i8>,
-    iocore_sound_channel4_noise_sample_table: Vec<i8>,
-    iocore_sound_channel4_nr42: i32,
-    iocore_sound_channel4_nr43: i32,
-    iocore_sound_channel4_nr44: i32,
-    iocore_sound_channel4_volume_shifter: i32,
-    iocore_sound_downsample_input_left: i32,
-    iocore_sound_downsample_input_right: i32,
-    iocore_sound_fifoabuffer_buffer: Vec<i8>,
-    iocore_sound_fifoabuffer_count: i32,
-    iocore_sound_fifoabuffer_position: i32,
-    iocore_sound_fifobbuffer_buffer: Vec<i8>,
-    iocore_sound_mixer_output_cache_left: i32,
-    iocore_sound_mixer_output_cache_right: i32,
-    iocore_sound_mixer_sound_bias: i32,
-    iocore_sound_nr50: i32,
-    iocore_sound_nr51: i32,
-    iocore_sound_nr52: i32,
-    iocore_sound_nr60: i32,
-    iocore_sound_nr61: i32,
-    iocore_sound_nr62: i32,
-    iocore_sound_nr63: i32,
-    iocore_sound_pwmbit_depth_mask: i32,
-    iocore_sound_pwmbit_depth_mask_shadow: i32,
-    iocore_sound_pwmwidth: i32,
-    iocore_sound_pwmwidth_old: i32,
-    iocore_sound_pwmwidth_shadow: i32,
-    iocore_sound_sequence_position: i32,
-    iocore_sound_sequencer_clocks: i32,
-    iocore_sound_sound_master_enabled: bool,
-    iocore_sound_vin_left_channel_master_volume: i32,
-    iocore_sound_vin_right_channel_master_volume: i32,
+    // iocore_sound_agbdirect_sound_a: i32,
+    // iocore_sound_agbdirect_sound_afolded: i32,
+    // iocore_sound_agbdirect_sound_aleft_can_play: bool,
+    // iocore_sound_agbdirect_sound_aright_can_play: bool,
+    // iocore_sound_agbdirect_sound_ashifter: i32,
+    // iocore_sound_agbdirect_sound_atimer: i32,
+    // iocore_sound_agbdirect_sound_b: i32,
+    // iocore_sound_agbdirect_sound_bfolded: i32,
+    // iocore_sound_agbdirect_sound_bleft_can_play: bool,
+    // iocore_sound_agbdirect_sound_bright_can_play: bool,
+    // iocore_sound_agbdirect_sound_bshifter: i32,
+    // iocore_sound_agbdirect_sound_btimer: i32,
+    // iocore_sound_audio_clocks_until_next_event: i32,
+    // iocore_sound_audio_clocks_until_next_event_counter: i32,
+    // iocore_sound_audio_index: i32,
+    // iocore_sound_audio_resampler_first_pass_factor: i32,
+    // iocore_sound_audio_ticks: i32,
+    // iocore_sound_cgbmixer_output_cache_left: i32,
+    // iocore_sound_cgbmixer_output_cache_left_folded: i32,
+    // iocore_sound_cgbmixer_output_cache_right: i32,
+    // iocore_sound_cgbmixer_output_cache_right_folded: i32,
+    // iocore_sound_cgboutput_ratio: i32,
+    // iocore_sound_channel1_cached_duty: f64,
+    // iocore_sound_channel1_can_play: bool,
+    // iocore_sound_channel1_consecutive: bool,
+    // iocore_sound_channel1_current_sample_left: i32,
+    // iocore_sound_channel1_current_sample_right: i32,
+    // iocore_sound_channel1_decrease_sweep: bool,
+    // iocore_sound_channel1_duty_tracker: i32,
+    // iocore_sound_channel1_enabled: i32,
+    // iocore_sound_channel1_envelope_sweeps: i32,
+    // iocore_sound_channel1_envelope_sweeps_last: i32,
+    // iocore_sound_channel1_envelope_volume: i32,
+    // iocore_sound_channel1_frequency: i32,
+    // iocore_sound_channel1_frequency_counter: i32,
+    // iocore_sound_channel1_frequency_sweep_divider: i32,
+    // iocore_sound_channel1_frequency_tracker: i32,
+    // iocore_sound_channel1_last_time_sweep: i32,
+    // iocore_sound_channel1_left_enable: i32,
+    // iocore_sound_channel1_nr10: i32,
+    // iocore_sound_channel1_nr11: i32,
+    // iocore_sound_channel1_nr12: i32,
+    // iocore_sound_channel1_nr14: i32,
+    // iocore_sound_channel1_right_enable: i32,
+    // iocore_sound_channel1_shadow_frequency: i32,
+    // iocore_sound_channel1_sweep_fault: bool,
+    // iocore_sound_channel1_swept: bool,
+    // iocore_sound_channel1_time_sweep: i32,
+    // iocore_sound_channel1_total_length: i32,
+    // iocore_sound_channel2_nr21: i32,
+    // iocore_sound_channel2_nr22: i32,
+    // iocore_sound_channel2_nr23: i32,
+    // iocore_sound_channel2_nr24: i32,
+    // iocore_sound_channel2_shadow_frequency: i32,
+    // iocore_sound_channel3_cached_sample: i32,
+    // iocore_sound_channel3_can_play: bool,
+    // iocore_sound_channel3_counter: i32,
+    // iocore_sound_channel3_frequency_period: i32,
+    // iocore_sound_channel3_last_sample_lookup: i32,
+    // iocore_sound_channel3_nr30: i32,
+    // iocore_sound_channel3_nr31: i32,
+    // iocore_sound_channel3_nr32: i32,
+    // iocore_sound_channel3_nr33: i32,
+    // iocore_sound_channel3_nr34: i32,
+    // iocore_sound_channel3_pattern_type: i32,
+    // iocore_sound_channel3_pcm: Vec<i8>,
+    // iocore_sound_channel3_pcm16: Vec<u16>,
+    // iocore_sound_channel3_pcm32: Vec<i32>,
+    // iocore_sound_channel3_waveram16: Vec<u16>,
+    // iocore_sound_channel3_waveram32: Vec<i32>,
+    // iocore_sound_channel3_waveram8: Vec<u8>,
+    // iocore_sound_channel3_waverambank_accessed: i32,
+    // iocore_sound_channel3_wave_rambank_size: i32,
+    // iocore_sound_channel3_waverambank_specified: i32,
+    // iocore_sound_channel4_bit_range: i32,
+    // iocore_sound_channel4_counter: i32,
+    // iocore_sound_channel4_current_volume: i32,
+    // iocore_sound_channel4_frequency_period: i32,
+    // iocore_sound_channel4_last_sample_lookup: i32,
+    // iocore_sound_channel4_lsfr15_table: Vec<i8>,
+    // iocore_sound_channel4_lsfr7_table: Vec<i8>,
+    // iocore_sound_channel4_noise_sample_table: Vec<i8>,
+    // iocore_sound_channel4_nr42: i32,
+    // iocore_sound_channel4_nr43: i32,
+    // iocore_sound_channel4_nr44: i32,
+    // iocore_sound_channel4_volume_shifter: i32,
+    // iocore_sound_downsample_input_left: i32,
+    // iocore_sound_downsample_input_right: i32,
+    // iocore_sound_fifoabuffer_buffer: Vec<i8>,
+    // iocore_sound_fifoabuffer_count: i32,
+    // iocore_sound_fifoabuffer_position: i32,
+    // iocore_sound_fifobbuffer_buffer: Vec<i8>,
+    // iocore_sound_mixer_output_cache_left: i32,
+    // iocore_sound_mixer_output_cache_right: i32,
+    // iocore_sound_mixer_sound_bias: i32,
+    // iocore_sound_nr50: i32,
+    // iocore_sound_nr51: i32,
+    // iocore_sound_nr52: i32,
+    // iocore_sound_nr60: i32,
+    // iocore_sound_nr61: i32,
+    // iocore_sound_nr62: i32,
+    // iocore_sound_nr63: i32,
+    // iocore_sound_pwmbit_depth_mask: i32,
+    // iocore_sound_pwmbit_depth_mask_shadow: i32,
+    // iocore_sound_pwmwidth: i32,
+    // iocore_sound_pwmwidth_old: i32,
+    // iocore_sound_pwmwidth_shadow: i32,
+    // iocore_sound_sequence_position: i32,
+    // iocore_sound_sequencer_clocks: i32,
+    // iocore_sound_sound_master_enabled: bool,
+    // iocore_sound_vin_left_channel_master_volume: i32,
+    // iocore_sound_vin_right_channel_master_volume: i32,
     iocore_system_status: i32,
     iocore_thumb_decode: i32,
     iocore_thumb_execute: i32,
@@ -1643,434 +1643,434 @@ impl SaveState {
             .expect("IOCore.serial.SIOTransferStarted"),
             iocore_serial_clocks: JsValueEncoder::decode(object.get("IOCore.serialClocks"))
                 .expect("IOCore.serialClocks"),
-            iocore_sound_agbdirect_sound_a: JsValueEncoder::decode(
-                object.get("IOCore.sound.AGBDirectSoundA"),
-            )
-            .expect("IOCore.sound.AGBDirectSoundA"),
-            iocore_sound_agbdirect_sound_afolded: JsValueEncoder::decode(
-                object.get("IOCore.sound.AGBDirectSoundAFolded"),
-            )
-            .expect("IOCore.sound.AGBDirectSoundAFolded"),
-            iocore_sound_agbdirect_sound_aleft_can_play: JsValueEncoder::decode(
-                object.get("IOCore.sound.AGBDirectSoundALeftCanPlay"),
-            )
-            .expect("IOCore.sound.AGBDirectSoundALeftCanPlay"),
-            iocore_sound_agbdirect_sound_aright_can_play: JsValueEncoder::decode(
-                object.get("IOCore.sound.AGBDirectSoundARightCanPlay"),
-            )
-            .expect("IOCore.sound.AGBDirectSoundARightCanPlay"),
-            iocore_sound_agbdirect_sound_ashifter: JsValueEncoder::decode(
-                object.get("IOCore.sound.AGBDirectSoundAShifter"),
-            )
-            .expect("IOCore.sound.AGBDirectSoundAShifter"),
-            iocore_sound_agbdirect_sound_atimer: JsValueEncoder::decode(
-                object.get("IOCore.sound.AGBDirectSoundATimer"),
-            )
-            .expect("IOCore.sound.AGBDirectSoundATimer"),
-            iocore_sound_agbdirect_sound_b: JsValueEncoder::decode(
-                object.get("IOCore.sound.AGBDirectSoundB"),
-            )
-            .expect("IOCore.sound.AGBDirectSoundB"),
-            iocore_sound_agbdirect_sound_bfolded: JsValueEncoder::decode(
-                object.get("IOCore.sound.AGBDirectSoundBFolded"),
-            )
-            .expect("IOCore.sound.AGBDirectSoundBFolded"),
-            iocore_sound_agbdirect_sound_bleft_can_play: JsValueEncoder::decode(
-                object.get("IOCore.sound.AGBDirectSoundBLeftCanPlay"),
-            )
-            .expect("IOCore.sound.AGBDirectSoundBLeftCanPlay"),
-            iocore_sound_agbdirect_sound_bright_can_play: JsValueEncoder::decode(
-                object.get("IOCore.sound.AGBDirectSoundBRightCanPlay"),
-            )
-            .expect("IOCore.sound.AGBDirectSoundBRightCanPlay"),
-            iocore_sound_agbdirect_sound_bshifter: JsValueEncoder::decode(
-                object.get("IOCore.sound.AGBDirectSoundBShifter"),
-            )
-            .expect("IOCore.sound.AGBDirectSoundBShifter"),
-            iocore_sound_agbdirect_sound_btimer: JsValueEncoder::decode(
-                object.get("IOCore.sound.AGBDirectSoundBTimer"),
-            )
-            .expect("IOCore.sound.AGBDirectSoundBTimer"),
-            iocore_sound_audio_clocks_until_next_event: JsValueEncoder::decode(
-                object.get("IOCore.sound.audioClocksUntilNextEvent"),
-            )
-            .expect("IOCore.sound.audioClocksUntilNextEvent"),
-            iocore_sound_audio_clocks_until_next_event_counter: JsValueEncoder::decode(
-                object.get("IOCore.sound.audioClocksUntilNextEventCounter"),
-            )
-            .expect("IOCore.sound.audioClocksUntilNextEventCounter"),
-            iocore_sound_audio_index: JsValueEncoder::decode(object.get("IOCore.sound.audioIndex"))
-                .expect("IOCore.sound.audioIndex"),
-            iocore_sound_audio_resampler_first_pass_factor: JsValueEncoder::decode(
-                object.get("IOCore.sound.audioResamplerFirstPassFactor"),
-            )
-            .expect("IOCore.sound.audioResamplerFirstPassFactor"),
-            iocore_sound_audio_ticks: JsValueEncoder::decode(object.get("IOCore.sound.audioTicks"))
-                .expect("IOCore.sound.audioTicks"),
-            iocore_sound_cgbmixer_output_cache_left: JsValueEncoder::decode(
-                object.get("IOCore.sound.CGBMixerOutputCacheLeft"),
-            )
-            .expect("IOCore.sound.CGBMixerOutputCacheLeft"),
-            iocore_sound_cgbmixer_output_cache_left_folded: JsValueEncoder::decode(
-                object.get("IOCore.sound.CGBMixerOutputCacheLeftFolded"),
-            )
-            .expect("IOCore.sound.CGBMixerOutputCacheLeftFolded"),
-            iocore_sound_cgbmixer_output_cache_right: JsValueEncoder::decode(
-                object.get("IOCore.sound.CGBMixerOutputCacheRight"),
-            )
-            .expect("IOCore.sound.CGBMixerOutputCacheRight"),
-            iocore_sound_cgbmixer_output_cache_right_folded: JsValueEncoder::decode(
-                object.get("IOCore.sound.CGBMixerOutputCacheRightFolded"),
-            )
-            .expect("IOCore.sound.CGBMixerOutputCacheRightFolded"),
-            iocore_sound_cgboutput_ratio: JsValueEncoder::decode(
-                object.get("IOCore.sound.CGBOutputRatio"),
-            )
-            .expect("IOCore.sound.CGBOutputRatio"),
-            iocore_sound_channel1_cached_duty: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.CachedDuty"),
-            )
-            .expect("IOCore.sound.channel1.CachedDuty"),
-            iocore_sound_channel1_can_play: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.canPlay"),
-            )
-            .expect("IOCore.sound.channel1.canPlay"),
-            iocore_sound_channel1_consecutive: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.consecutive"),
-            )
-            .expect("IOCore.sound.channel1.consecutive"),
-            iocore_sound_channel1_current_sample_left: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.currentSampleLeft"),
-            )
-            .expect("IOCore.sound.channel1.currentSampleLeft"),
-            iocore_sound_channel1_current_sample_right: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.currentSampleRight"),
-            )
-            .expect("IOCore.sound.channel1.currentSampleRight"),
-            iocore_sound_channel1_decrease_sweep: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.decreaseSweep"),
-            )
-            .expect("IOCore.sound.channel1.decreaseSweep"),
-            iocore_sound_channel1_duty_tracker: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.DutyTracker"),
-            )
-            .expect("IOCore.sound.channel1.DutyTracker"),
-            iocore_sound_channel1_enabled: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.Enabled"),
-            )
-            .expect("IOCore.sound.channel1.Enabled"),
-            iocore_sound_channel1_envelope_sweeps: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.envelopeSweeps"),
-            )
-            .expect("IOCore.sound.channel1.envelopeSweeps"),
-            iocore_sound_channel1_envelope_sweeps_last: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.envelopeSweepsLast"),
-            )
-            .expect("IOCore.sound.channel1.envelopeSweepsLast"),
-            iocore_sound_channel1_envelope_volume: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.envelopeVolume"),
-            )
-            .expect("IOCore.sound.channel1.envelopeVolume"),
-            iocore_sound_channel1_frequency: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.frequency"),
-            )
-            .expect("IOCore.sound.channel1.frequency"),
-            iocore_sound_channel1_frequency_counter: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.FrequencyCounter"),
-            )
-            .expect("IOCore.sound.channel1.FrequencyCounter"),
-            iocore_sound_channel1_frequency_sweep_divider: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.frequencySweepDivider"),
-            )
-            .expect("IOCore.sound.channel1.frequencySweepDivider"),
-            iocore_sound_channel1_frequency_tracker: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.FrequencyTracker"),
-            )
-            .expect("IOCore.sound.channel1.FrequencyTracker"),
-            iocore_sound_channel1_last_time_sweep: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.lastTimeSweep"),
-            )
-            .expect("IOCore.sound.channel1.lastTimeSweep"),
-            iocore_sound_channel1_left_enable: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.leftEnable"),
-            )
-            .expect("IOCore.sound.channel1.leftEnable"),
-            iocore_sound_channel1_nr10: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.nr10"),
-            )
-            .expect("IOCore.sound.channel1.nr10"),
-            iocore_sound_channel1_nr11: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.nr11"),
-            )
-            .expect("IOCore.sound.channel1.nr11"),
-            iocore_sound_channel1_nr12: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.nr12"),
-            )
-            .expect("IOCore.sound.channel1.nr12"),
-            iocore_sound_channel1_nr14: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.nr14"),
-            )
-            .expect("IOCore.sound.channel1.nr14"),
-            iocore_sound_channel1_right_enable: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.rightEnable"),
-            )
-            .expect("IOCore.sound.channel1.rightEnable"),
-            iocore_sound_channel1_shadow_frequency: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.ShadowFrequency"),
-            )
-            .expect("IOCore.sound.channel1.ShadowFrequency"),
-            iocore_sound_channel1_sweep_fault: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.SweepFault"),
-            )
-            .expect("IOCore.sound.channel1.SweepFault"),
-            iocore_sound_channel1_swept: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.Swept"),
-            )
-            .expect("IOCore.sound.channel1.Swept"),
-            iocore_sound_channel1_time_sweep: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.timeSweep"),
-            )
-            .expect("IOCore.sound.channel1.timeSweep"),
-            iocore_sound_channel1_total_length: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel1.totalLength"),
-            )
-            .expect("IOCore.sound.channel1.totalLength"),
-            iocore_sound_channel2_nr21: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel2.nr21"),
-            )
-            .expect("IOCore.sound.channel2.nr21"),
-            iocore_sound_channel2_nr22: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel2.nr22"),
-            )
-            .expect("IOCore.sound.channel2.nr22"),
-            iocore_sound_channel2_nr23: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel2.nr23"),
-            )
-            .expect("IOCore.sound.channel2.nr23"),
-            iocore_sound_channel2_nr24: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel2.nr24"),
-            )
-            .expect("IOCore.sound.channel2.nr24"),
-            iocore_sound_channel2_shadow_frequency: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel2.ShadowFrequency"),
-            )
-            .expect("IOCore.sound.channel2.ShadowFrequency"),
-            iocore_sound_channel3_cached_sample: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.cachedSample"),
-            )
-            .expect("IOCore.sound.channel3.cachedSample"),
-            iocore_sound_channel3_can_play: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.canPlay"),
-            )
-            .expect("IOCore.sound.channel3.canPlay"),
-            iocore_sound_channel3_counter: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.counter"),
-            )
-            .expect("IOCore.sound.channel3.counter"),
-            iocore_sound_channel3_frequency_period: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.FrequencyPeriod"),
-            )
-            .expect("IOCore.sound.channel3.FrequencyPeriod"),
-            iocore_sound_channel3_last_sample_lookup: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.lastSampleLookup"),
-            )
-            .expect("IOCore.sound.channel3.lastSampleLookup"),
-            iocore_sound_channel3_nr30: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.nr30"),
-            )
-            .expect("IOCore.sound.channel3.nr30"),
-            iocore_sound_channel3_nr31: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.nr31"),
-            )
-            .expect("IOCore.sound.channel3.nr31"),
-            iocore_sound_channel3_nr32: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.nr32"),
-            )
-            .expect("IOCore.sound.channel3.nr32"),
-            iocore_sound_channel3_nr33: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.nr33"),
-            )
-            .expect("IOCore.sound.channel3.nr33"),
-            iocore_sound_channel3_nr34: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.nr34"),
-            )
-            .expect("IOCore.sound.channel3.nr34"),
-            iocore_sound_channel3_pattern_type: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.patternType"),
-            )
-            .expect("IOCore.sound.channel3.patternType"),
-            iocore_sound_channel3_pcm: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.PCM"),
-            )
-            .expect("IOCore.sound.channel3.PCM"),
-            iocore_sound_channel3_pcm16: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.PCM16"),
-            )
-            .expect("IOCore.sound.channel3.PCM16"),
-            iocore_sound_channel3_pcm32: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.PCM32"),
-            )
-            .expect("IOCore.sound.channel3.PCM32"),
-            iocore_sound_channel3_waveram16: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.WAVERAM16"),
-            )
-            .expect("IOCore.sound.channel3.WAVERAM16"),
-            iocore_sound_channel3_waveram32: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.WAVERAM32"),
-            )
-            .expect("IOCore.sound.channel3.WAVERAM32"),
-            iocore_sound_channel3_waveram8: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.WAVERAM8"),
-            )
-            .expect("IOCore.sound.channel3.WAVERAM8"),
-            iocore_sound_channel3_waverambank_accessed: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.WAVERAMBankAccessed"),
-            )
-            .expect("IOCore.sound.channel3.WAVERAMBankAccessed"),
-            iocore_sound_channel3_wave_rambank_size: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.WaveRAMBankSize"),
-            )
-            .expect("IOCore.sound.channel3.WaveRAMBankSize"),
-            iocore_sound_channel3_waverambank_specified: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel3.WAVERAMBankSpecified"),
-            )
-            .expect("IOCore.sound.channel3.WAVERAMBankSpecified"),
-            iocore_sound_channel4_bit_range: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel4.BitRange"),
-            )
-            .expect("IOCore.sound.channel4.BitRange"),
-            iocore_sound_channel4_counter: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel4.counter"),
-            )
-            .expect("IOCore.sound.channel4.counter"),
-            iocore_sound_channel4_current_volume: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel4.currentVolume"),
-            )
-            .expect("IOCore.sound.channel4.currentVolume"),
-            iocore_sound_channel4_frequency_period: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel4.FrequencyPeriod"),
-            )
-            .expect("IOCore.sound.channel4.FrequencyPeriod"),
-            iocore_sound_channel4_last_sample_lookup: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel4.lastSampleLookup"),
-            )
-            .expect("IOCore.sound.channel4.lastSampleLookup"),
-            iocore_sound_channel4_lsfr15_table: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel4.LSFR15Table"),
-            )
-            .expect("IOCore.sound.channel4.LSFR15Table"),
-            iocore_sound_channel4_lsfr7_table: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel4.LSFR7Table"),
-            )
-            .expect("IOCore.sound.channel4.LSFR7Table"),
-            iocore_sound_channel4_noise_sample_table: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel4.noiseSampleTable"),
-            )
-            .expect("IOCore.sound.channel4.noiseSampleTable"),
-            iocore_sound_channel4_nr42: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel4.nr42"),
-            )
-            .expect("IOCore.sound.channel4.nr42"),
-            iocore_sound_channel4_nr43: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel4.nr43"),
-            )
-            .expect("IOCore.sound.channel4.nr43"),
-            iocore_sound_channel4_nr44: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel4.nr44"),
-            )
-            .expect("IOCore.sound.channel4.nr44"),
-            iocore_sound_channel4_volume_shifter: JsValueEncoder::decode(
-                object.get("IOCore.sound.channel4.VolumeShifter"),
-            )
-            .expect("IOCore.sound.channel4.VolumeShifter"),
-            iocore_sound_downsample_input_left: JsValueEncoder::decode(
-                object.get("IOCore.sound.downsampleInputLeft"),
-            )
-            .expect("IOCore.sound.downsampleInputLeft"),
-            iocore_sound_downsample_input_right: JsValueEncoder::decode(
-                object.get("IOCore.sound.downsampleInputRight"),
-            )
-            .expect("IOCore.sound.downsampleInputRight"),
-            iocore_sound_fifoabuffer_buffer: JsValueEncoder::decode(
-                object.get("IOCore.sound.FIFOABuffer.buffer"),
-            )
-            .expect("IOCore.sound.FIFOABuffer.buffer"),
-            iocore_sound_fifoabuffer_count: JsValueEncoder::decode(
-                object.get("IOCore.sound.FIFOABuffer.count"),
-            )
-            .expect("IOCore.sound.FIFOABuffer.count"),
-            iocore_sound_fifoabuffer_position: JsValueEncoder::decode(
-                object.get("IOCore.sound.FIFOABuffer.position"),
-            )
-            .expect("IOCore.sound.FIFOABuffer.position"),
-            iocore_sound_fifobbuffer_buffer: JsValueEncoder::decode(
-                object.get("IOCore.sound.FIFOBBuffer.buffer"),
-            )
-            .expect("IOCore.sound.FIFOBBuffer.buffer"),
-            iocore_sound_mixer_output_cache_left: JsValueEncoder::decode(
-                object.get("IOCore.sound.mixerOutputCacheLeft"),
-            )
-            .expect("IOCore.sound.mixerOutputCacheLeft"),
-            iocore_sound_mixer_output_cache_right: JsValueEncoder::decode(
-                object.get("IOCore.sound.mixerOutputCacheRight"),
-            )
-            .expect("IOCore.sound.mixerOutputCacheRight"),
-            iocore_sound_mixer_sound_bias: JsValueEncoder::decode(
-                object.get("IOCore.sound.mixerSoundBIAS"),
-            )
-            .expect("IOCore.sound.mixerSoundBIAS"),
-            iocore_sound_nr50: JsValueEncoder::decode(object.get("IOCore.sound.nr50"))
-                .expect("IOCore.sound.nr50"),
-            iocore_sound_nr51: JsValueEncoder::decode(object.get("IOCore.sound.nr51"))
-                .expect("IOCore.sound.nr51"),
-            iocore_sound_nr52: JsValueEncoder::decode(object.get("IOCore.sound.nr52"))
-                .expect("IOCore.sound.nr52"),
-            iocore_sound_nr60: JsValueEncoder::decode(object.get("IOCore.sound.nr60"))
-                .expect("IOCore.sound.nr60"),
-            iocore_sound_nr61: JsValueEncoder::decode(object.get("IOCore.sound.nr61"))
-                .expect("IOCore.sound.nr61"),
-            iocore_sound_nr62: JsValueEncoder::decode(object.get("IOCore.sound.nr62"))
-                .expect("IOCore.sound.nr62"),
-            iocore_sound_nr63: JsValueEncoder::decode(object.get("IOCore.sound.nr63"))
-                .expect("IOCore.sound.nr63"),
-            iocore_sound_pwmbit_depth_mask: JsValueEncoder::decode(
-                object.get("IOCore.sound.PWMBitDepthMask"),
-            )
-            .expect("IOCore.sound.PWMBitDepthMask"),
-            iocore_sound_pwmbit_depth_mask_shadow: JsValueEncoder::decode(
-                object.get("IOCore.sound.PWMBitDepthMaskShadow"),
-            )
-            .expect("IOCore.sound.PWMBitDepthMaskShadow"),
-            iocore_sound_pwmwidth: JsValueEncoder::decode(object.get("IOCore.sound.PWMWidth"))
-                .expect("IOCore.sound.PWMWidth"),
-            iocore_sound_pwmwidth_old: JsValueEncoder::decode(
-                object.get("IOCore.sound.PWMWidthOld"),
-            )
-            .expect("IOCore.sound.PWMWidthOld"),
-            iocore_sound_pwmwidth_shadow: JsValueEncoder::decode(
-                object.get("IOCore.sound.PWMWidthShadow"),
-            )
-            .expect("IOCore.sound.PWMWidthShadow"),
-            iocore_sound_sequence_position: JsValueEncoder::decode(
-                object.get("IOCore.sound.sequencePosition"),
-            )
-            .expect("IOCore.sound.sequencePosition"),
-            iocore_sound_sequencer_clocks: JsValueEncoder::decode(
-                object.get("IOCore.sound.sequencerClocks"),
-            )
-            .expect("IOCore.sound.sequencerClocks"),
-            iocore_sound_sound_master_enabled: JsValueEncoder::decode(
-                object.get("IOCore.sound.soundMasterEnabled"),
-            )
-            .expect("IOCore.sound.soundMasterEnabled"),
-            iocore_sound_vin_left_channel_master_volume: JsValueEncoder::decode(
-                object.get("IOCore.sound.VinLeftChannelMasterVolume"),
-            )
-            .expect("IOCore.sound.VinLeftChannelMasterVolume"),
-            iocore_sound_vin_right_channel_master_volume: JsValueEncoder::decode(
-                object.get("IOCore.sound.VinRightChannelMasterVolume"),
-            )
-            .expect("IOCore.sound.VinRightChannelMasterVolume"),
+            // iocore_sound_agbdirect_sound_a: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.AGBDirectSoundA"),
+            // )
+            // .expect("IOCore.sound.AGBDirectSoundA"),
+            // iocore_sound_agbdirect_sound_afolded: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.AGBDirectSoundAFolded"),
+            // )
+            // .expect("IOCore.sound.AGBDirectSoundAFolded"),
+            // iocore_sound_agbdirect_sound_aleft_can_play: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.AGBDirectSoundALeftCanPlay"),
+            // )
+            // .expect("IOCore.sound.AGBDirectSoundALeftCanPlay"),
+            // iocore_sound_agbdirect_sound_aright_can_play: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.AGBDirectSoundARightCanPlay"),
+            // )
+            // .expect("IOCore.sound.AGBDirectSoundARightCanPlay"),
+            // iocore_sound_agbdirect_sound_ashifter: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.AGBDirectSoundAShifter"),
+            // )
+            // .expect("IOCore.sound.AGBDirectSoundAShifter"),
+            // iocore_sound_agbdirect_sound_atimer: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.AGBDirectSoundATimer"),
+            // )
+            // .expect("IOCore.sound.AGBDirectSoundATimer"),
+            // iocore_sound_agbdirect_sound_b: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.AGBDirectSoundB"),
+            // )
+            // .expect("IOCore.sound.AGBDirectSoundB"),
+            // iocore_sound_agbdirect_sound_bfolded: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.AGBDirectSoundBFolded"),
+            // )
+            // .expect("IOCore.sound.AGBDirectSoundBFolded"),
+            // iocore_sound_agbdirect_sound_bleft_can_play: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.AGBDirectSoundBLeftCanPlay"),
+            // )
+            // .expect("IOCore.sound.AGBDirectSoundBLeftCanPlay"),
+            // iocore_sound_agbdirect_sound_bright_can_play: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.AGBDirectSoundBRightCanPlay"),
+            // )
+            // .expect("IOCore.sound.AGBDirectSoundBRightCanPlay"),
+            // iocore_sound_agbdirect_sound_bshifter: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.AGBDirectSoundBShifter"),
+            // )
+            // .expect("IOCore.sound.AGBDirectSoundBShifter"),
+            // iocore_sound_agbdirect_sound_btimer: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.AGBDirectSoundBTimer"),
+            // )
+            // .expect("IOCore.sound.AGBDirectSoundBTimer"),
+            // iocore_sound_audio_clocks_until_next_event: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.audioClocksUntilNextEvent"),
+            // )
+            // .expect("IOCore.sound.audioClocksUntilNextEvent"),
+            // iocore_sound_audio_clocks_until_next_event_counter: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.audioClocksUntilNextEventCounter"),
+            // )
+            // .expect("IOCore.sound.audioClocksUntilNextEventCounter"),
+            // iocore_sound_audio_index: JsValueEncoder::decode(object.get("IOCore.sound.audioIndex"))
+            //     .expect("IOCore.sound.audioIndex"),
+            // iocore_sound_audio_resampler_first_pass_factor: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.audioResamplerFirstPassFactor"),
+            // )
+            // .expect("IOCore.sound.audioResamplerFirstPassFactor"),
+            // iocore_sound_audio_ticks: JsValueEncoder::decode(object.get("IOCore.sound.audioTicks"))
+            //     .expect("IOCore.sound.audioTicks"),
+            // iocore_sound_cgbmixer_output_cache_left: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.CGBMixerOutputCacheLeft"),
+            // )
+            // .expect("IOCore.sound.CGBMixerOutputCacheLeft"),
+            // iocore_sound_cgbmixer_output_cache_left_folded: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.CGBMixerOutputCacheLeftFolded"),
+            // )
+            // .expect("IOCore.sound.CGBMixerOutputCacheLeftFolded"),
+            // iocore_sound_cgbmixer_output_cache_right: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.CGBMixerOutputCacheRight"),
+            // )
+            // .expect("IOCore.sound.CGBMixerOutputCacheRight"),
+            // iocore_sound_cgbmixer_output_cache_right_folded: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.CGBMixerOutputCacheRightFolded"),
+            // )
+            // .expect("IOCore.sound.CGBMixerOutputCacheRightFolded"),
+            // iocore_sound_cgboutput_ratio: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.CGBOutputRatio"),
+            // )
+            // .expect("IOCore.sound.CGBOutputRatio"),
+            // iocore_sound_channel1_cached_duty: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.CachedDuty"),
+            // )
+            // .expect("IOCore.sound.channel1.CachedDuty"),
+            // iocore_sound_channel1_can_play: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.canPlay"),
+            // )
+            // .expect("IOCore.sound.channel1.canPlay"),
+            // iocore_sound_channel1_consecutive: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.consecutive"),
+            // )
+            // .expect("IOCore.sound.channel1.consecutive"),
+            // iocore_sound_channel1_current_sample_left: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.currentSampleLeft"),
+            // )
+            // .expect("IOCore.sound.channel1.currentSampleLeft"),
+            // iocore_sound_channel1_current_sample_right: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.currentSampleRight"),
+            // )
+            // .expect("IOCore.sound.channel1.currentSampleRight"),
+            // iocore_sound_channel1_decrease_sweep: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.decreaseSweep"),
+            // )
+            // .expect("IOCore.sound.channel1.decreaseSweep"),
+            // iocore_sound_channel1_duty_tracker: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.DutyTracker"),
+            // )
+            // .expect("IOCore.sound.channel1.DutyTracker"),
+            // iocore_sound_channel1_enabled: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.Enabled"),
+            // )
+            // .expect("IOCore.sound.channel1.Enabled"),
+            // iocore_sound_channel1_envelope_sweeps: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.envelopeSweeps"),
+            // )
+            // .expect("IOCore.sound.channel1.envelopeSweeps"),
+            // iocore_sound_channel1_envelope_sweeps_last: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.envelopeSweepsLast"),
+            // )
+            // .expect("IOCore.sound.channel1.envelopeSweepsLast"),
+            // iocore_sound_channel1_envelope_volume: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.envelopeVolume"),
+            // )
+            // .expect("IOCore.sound.channel1.envelopeVolume"),
+            // iocore_sound_channel1_frequency: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.frequency"),
+            // )
+            // .expect("IOCore.sound.channel1.frequency"),
+            // iocore_sound_channel1_frequency_counter: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.FrequencyCounter"),
+            // )
+            // .expect("IOCore.sound.channel1.FrequencyCounter"),
+            // iocore_sound_channel1_frequency_sweep_divider: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.frequencySweepDivider"),
+            // )
+            // .expect("IOCore.sound.channel1.frequencySweepDivider"),
+            // iocore_sound_channel1_frequency_tracker: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.FrequencyTracker"),
+            // )
+            // .expect("IOCore.sound.channel1.FrequencyTracker"),
+            // iocore_sound_channel1_last_time_sweep: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.lastTimeSweep"),
+            // )
+            // .expect("IOCore.sound.channel1.lastTimeSweep"),
+            // iocore_sound_channel1_left_enable: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.leftEnable"),
+            // )
+            // .expect("IOCore.sound.channel1.leftEnable"),
+            // iocore_sound_channel1_nr10: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.nr10"),
+            // )
+            // .expect("IOCore.sound.channel1.nr10"),
+            // iocore_sound_channel1_nr11: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.nr11"),
+            // )
+            // .expect("IOCore.sound.channel1.nr11"),
+            // iocore_sound_channel1_nr12: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.nr12"),
+            // )
+            // .expect("IOCore.sound.channel1.nr12"),
+            // iocore_sound_channel1_nr14: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.nr14"),
+            // )
+            // .expect("IOCore.sound.channel1.nr14"),
+            // iocore_sound_channel1_right_enable: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.rightEnable"),
+            // )
+            // .expect("IOCore.sound.channel1.rightEnable"),
+            // iocore_sound_channel1_shadow_frequency: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.ShadowFrequency"),
+            // )
+            // .expect("IOCore.sound.channel1.ShadowFrequency"),
+            // iocore_sound_channel1_sweep_fault: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.SweepFault"),
+            // )
+            // .expect("IOCore.sound.channel1.SweepFault"),
+            // iocore_sound_channel1_swept: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.Swept"),
+            // )
+            // .expect("IOCore.sound.channel1.Swept"),
+            // iocore_sound_channel1_time_sweep: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.timeSweep"),
+            // )
+            // .expect("IOCore.sound.channel1.timeSweep"),
+            // iocore_sound_channel1_total_length: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel1.totalLength"),
+            // )
+            // .expect("IOCore.sound.channel1.totalLength"),
+            // iocore_sound_channel2_nr21: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel2.nr21"),
+            // )
+            // .expect("IOCore.sound.channel2.nr21"),
+            // iocore_sound_channel2_nr22: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel2.nr22"),
+            // )
+            // .expect("IOCore.sound.channel2.nr22"),
+            // iocore_sound_channel2_nr23: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel2.nr23"),
+            // )
+            // .expect("IOCore.sound.channel2.nr23"),
+            // iocore_sound_channel2_nr24: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel2.nr24"),
+            // )
+            // .expect("IOCore.sound.channel2.nr24"),
+            // iocore_sound_channel2_shadow_frequency: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel2.ShadowFrequency"),
+            // )
+            // .expect("IOCore.sound.channel2.ShadowFrequency"),
+            // iocore_sound_channel3_cached_sample: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.cachedSample"),
+            // )
+            // .expect("IOCore.sound.channel3.cachedSample"),
+            // iocore_sound_channel3_can_play: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.canPlay"),
+            // )
+            // .expect("IOCore.sound.channel3.canPlay"),
+            // iocore_sound_channel3_counter: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.counter"),
+            // )
+            // .expect("IOCore.sound.channel3.counter"),
+            // iocore_sound_channel3_frequency_period: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.FrequencyPeriod"),
+            // )
+            // .expect("IOCore.sound.channel3.FrequencyPeriod"),
+            // iocore_sound_channel3_last_sample_lookup: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.lastSampleLookup"),
+            // )
+            // .expect("IOCore.sound.channel3.lastSampleLookup"),
+            // iocore_sound_channel3_nr30: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.nr30"),
+            // )
+            // .expect("IOCore.sound.channel3.nr30"),
+            // iocore_sound_channel3_nr31: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.nr31"),
+            // )
+            // .expect("IOCore.sound.channel3.nr31"),
+            // iocore_sound_channel3_nr32: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.nr32"),
+            // )
+            // .expect("IOCore.sound.channel3.nr32"),
+            // iocore_sound_channel3_nr33: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.nr33"),
+            // )
+            // .expect("IOCore.sound.channel3.nr33"),
+            // iocore_sound_channel3_nr34: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.nr34"),
+            // )
+            // .expect("IOCore.sound.channel3.nr34"),
+            // iocore_sound_channel3_pattern_type: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.patternType"),
+            // )
+            // .expect("IOCore.sound.channel3.patternType"),
+            // iocore_sound_channel3_pcm: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.PCM"),
+            // )
+            // .expect("IOCore.sound.channel3.PCM"),
+            // iocore_sound_channel3_pcm16: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.PCM16"),
+            // )
+            // .expect("IOCore.sound.channel3.PCM16"),
+            // iocore_sound_channel3_pcm32: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.PCM32"),
+            // )
+            // .expect("IOCore.sound.channel3.PCM32"),
+            // iocore_sound_channel3_waveram16: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.WAVERAM16"),
+            // )
+            // .expect("IOCore.sound.channel3.WAVERAM16"),
+            // iocore_sound_channel3_waveram32: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.WAVERAM32"),
+            // )
+            // .expect("IOCore.sound.channel3.WAVERAM32"),
+            // iocore_sound_channel3_waveram8: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.WAVERAM8"),
+            // )
+            // .expect("IOCore.sound.channel3.WAVERAM8"),
+            // iocore_sound_channel3_waverambank_accessed: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.WAVERAMBankAccessed"),
+            // )
+            // .expect("IOCore.sound.channel3.WAVERAMBankAccessed"),
+            // iocore_sound_channel3_wave_rambank_size: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.WaveRAMBankSize"),
+            // )
+            // .expect("IOCore.sound.channel3.WaveRAMBankSize"),
+            // iocore_sound_channel3_waverambank_specified: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel3.WAVERAMBankSpecified"),
+            // )
+            // .expect("IOCore.sound.channel3.WAVERAMBankSpecified"),
+            // iocore_sound_channel4_bit_range: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel4.BitRange"),
+            // )
+            // .expect("IOCore.sound.channel4.BitRange"),
+            // iocore_sound_channel4_counter: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel4.counter"),
+            // )
+            // .expect("IOCore.sound.channel4.counter"),
+            // iocore_sound_channel4_current_volume: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel4.currentVolume"),
+            // )
+            // .expect("IOCore.sound.channel4.currentVolume"),
+            // iocore_sound_channel4_frequency_period: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel4.FrequencyPeriod"),
+            // )
+            // .expect("IOCore.sound.channel4.FrequencyPeriod"),
+            // iocore_sound_channel4_last_sample_lookup: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel4.lastSampleLookup"),
+            // )
+            // .expect("IOCore.sound.channel4.lastSampleLookup"),
+            // iocore_sound_channel4_lsfr15_table: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel4.LSFR15Table"),
+            // )
+            // .expect("IOCore.sound.channel4.LSFR15Table"),
+            // iocore_sound_channel4_lsfr7_table: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel4.LSFR7Table"),
+            // )
+            // .expect("IOCore.sound.channel4.LSFR7Table"),
+            // iocore_sound_channel4_noise_sample_table: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel4.noiseSampleTable"),
+            // )
+            // .expect("IOCore.sound.channel4.noiseSampleTable"),
+            // iocore_sound_channel4_nr42: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel4.nr42"),
+            // )
+            // .expect("IOCore.sound.channel4.nr42"),
+            // iocore_sound_channel4_nr43: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel4.nr43"),
+            // )
+            // .expect("IOCore.sound.channel4.nr43"),
+            // iocore_sound_channel4_nr44: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel4.nr44"),
+            // )
+            // .expect("IOCore.sound.channel4.nr44"),
+            // iocore_sound_channel4_volume_shifter: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.channel4.VolumeShifter"),
+            // )
+            // .expect("IOCore.sound.channel4.VolumeShifter"),
+            // iocore_sound_downsample_input_left: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.downsampleInputLeft"),
+            // )
+            // .expect("IOCore.sound.downsampleInputLeft"),
+            // iocore_sound_downsample_input_right: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.downsampleInputRight"),
+            // )
+            // .expect("IOCore.sound.downsampleInputRight"),
+            // iocore_sound_fifoabuffer_buffer: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.FIFOABuffer.buffer"),
+            // )
+            // .expect("IOCore.sound.FIFOABuffer.buffer"),
+            // iocore_sound_fifoabuffer_count: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.FIFOABuffer.count"),
+            // )
+            // .expect("IOCore.sound.FIFOABuffer.count"),
+            // iocore_sound_fifoabuffer_position: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.FIFOABuffer.position"),
+            // )
+            // .expect("IOCore.sound.FIFOABuffer.position"),
+            // iocore_sound_fifobbuffer_buffer: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.FIFOBBuffer.buffer"),
+            // )
+            // .expect("IOCore.sound.FIFOBBuffer.buffer"),
+            // iocore_sound_mixer_output_cache_left: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.mixerOutputCacheLeft"),
+            // )
+            // .expect("IOCore.sound.mixerOutputCacheLeft"),
+            // iocore_sound_mixer_output_cache_right: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.mixerOutputCacheRight"),
+            // )
+            // .expect("IOCore.sound.mixerOutputCacheRight"),
+            // iocore_sound_mixer_sound_bias: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.mixerSoundBIAS"),
+            // )
+            // .expect("IOCore.sound.mixerSoundBIAS"),
+            // iocore_sound_nr50: JsValueEncoder::decode(object.get("IOCore.sound.nr50"))
+            //     .expect("IOCore.sound.nr50"),
+            // iocore_sound_nr51: JsValueEncoder::decode(object.get("IOCore.sound.nr51"))
+            //     .expect("IOCore.sound.nr51"),
+            // iocore_sound_nr52: JsValueEncoder::decode(object.get("IOCore.sound.nr52"))
+            //     .expect("IOCore.sound.nr52"),
+            // iocore_sound_nr60: JsValueEncoder::decode(object.get("IOCore.sound.nr60"))
+            //     .expect("IOCore.sound.nr60"),
+            // iocore_sound_nr61: JsValueEncoder::decode(object.get("IOCore.sound.nr61"))
+            //     .expect("IOCore.sound.nr61"),
+            // iocore_sound_nr62: JsValueEncoder::decode(object.get("IOCore.sound.nr62"))
+            //     .expect("IOCore.sound.nr62"),
+            // iocore_sound_nr63: JsValueEncoder::decode(object.get("IOCore.sound.nr63"))
+            //     .expect("IOCore.sound.nr63"),
+            // iocore_sound_pwmbit_depth_mask: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.PWMBitDepthMask"),
+            // )
+            // .expect("IOCore.sound.PWMBitDepthMask"),
+            // iocore_sound_pwmbit_depth_mask_shadow: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.PWMBitDepthMaskShadow"),
+            // )
+            // .expect("IOCore.sound.PWMBitDepthMaskShadow"),
+            // iocore_sound_pwmwidth: JsValueEncoder::decode(object.get("IOCore.sound.PWMWidth"))
+            //     .expect("IOCore.sound.PWMWidth"),
+            // iocore_sound_pwmwidth_old: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.PWMWidthOld"),
+            // )
+            // .expect("IOCore.sound.PWMWidthOld"),
+            // iocore_sound_pwmwidth_shadow: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.PWMWidthShadow"),
+            // )
+            // .expect("IOCore.sound.PWMWidthShadow"),
+            // iocore_sound_sequence_position: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.sequencePosition"),
+            // )
+            // .expect("IOCore.sound.sequencePosition"),
+            // iocore_sound_sequencer_clocks: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.sequencerClocks"),
+            // )
+            // .expect("IOCore.sound.sequencerClocks"),
+            // iocore_sound_sound_master_enabled: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.soundMasterEnabled"),
+            // )
+            // .expect("IOCore.sound.soundMasterEnabled"),
+            // iocore_sound_vin_left_channel_master_volume: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.VinLeftChannelMasterVolume"),
+            // )
+            // .expect("IOCore.sound.VinLeftChannelMasterVolume"),
+            // iocore_sound_vin_right_channel_master_volume: JsValueEncoder::decode(
+            //     object.get("IOCore.sound.VinRightChannelMasterVolume"),
+            // )
+            // .expect("IOCore.sound.VinRightChannelMasterVolume"),
             iocore_system_status: JsValueEncoder::decode(object.get("IOCore.systemStatus"))
                 .expect("IOCore.systemStatus"),
             iocore_thumb_decode: JsValueEncoder::decode(object.get("IOCore.THUMB.decode"))
@@ -3634,558 +3634,558 @@ impl SaveState {
             "IOCore.serialClocks",
             JsValueEncoder::encode(self.iocore_serial_clocks).expect("iocore_serial_clocks"),
         );
-        object.set(
-            "IOCore.sound.AGBDirectSoundA",
-            JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_a)
-                .expect("iocore_sound_agbdirect_sound_a"),
-        );
-        object.set(
-            "IOCore.sound.AGBDirectSoundAFolded",
-            JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_afolded)
-                .expect("iocore_sound_agbdirect_sound_afolded"),
-        );
-        object.set(
-            "IOCore.sound.AGBDirectSoundALeftCanPlay",
-            JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_aleft_can_play)
-                .expect("iocore_sound_agbdirect_sound_aleft_can_play"),
-        );
-        object.set(
-            "IOCore.sound.AGBDirectSoundARightCanPlay",
-            JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_aright_can_play)
-                .expect("iocore_sound_agbdirect_sound_aright_can_play"),
-        );
-        object.set(
-            "IOCore.sound.AGBDirectSoundAShifter",
-            JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_ashifter)
-                .expect("iocore_sound_agbdirect_sound_ashifter"),
-        );
-        object.set(
-            "IOCore.sound.AGBDirectSoundATimer",
-            JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_atimer)
-                .expect("iocore_sound_agbdirect_sound_atimer"),
-        );
-        object.set(
-            "IOCore.sound.AGBDirectSoundB",
-            JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_b)
-                .expect("iocore_sound_agbdirect_sound_b"),
-        );
-        object.set(
-            "IOCore.sound.AGBDirectSoundBFolded",
-            JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_bfolded)
-                .expect("iocore_sound_agbdirect_sound_bfolded"),
-        );
-        object.set(
-            "IOCore.sound.AGBDirectSoundBLeftCanPlay",
-            JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_bleft_can_play)
-                .expect("iocore_sound_agbdirect_sound_bleft_can_play"),
-        );
-        object.set(
-            "IOCore.sound.AGBDirectSoundBRightCanPlay",
-            JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_bright_can_play)
-                .expect("iocore_sound_agbdirect_sound_bright_can_play"),
-        );
-        object.set(
-            "IOCore.sound.AGBDirectSoundBShifter",
-            JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_bshifter)
-                .expect("iocore_sound_agbdirect_sound_bshifter"),
-        );
-        object.set(
-            "IOCore.sound.AGBDirectSoundBTimer",
-            JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_btimer)
-                .expect("iocore_sound_agbdirect_sound_btimer"),
-        );
-        object.set(
-            "IOCore.sound.audioClocksUntilNextEvent",
-            JsValueEncoder::encode(self.iocore_sound_audio_clocks_until_next_event)
-                .expect("iocore_sound_audio_clocks_until_next_event"),
-        );
-        object.set(
-            "IOCore.sound.audioClocksUntilNextEventCounter",
-            JsValueEncoder::encode(self.iocore_sound_audio_clocks_until_next_event_counter)
-                .expect("iocore_sound_audio_clocks_until_next_event_counter"),
-        );
-        object.set(
-            "IOCore.sound.audioIndex",
-            JsValueEncoder::encode(self.iocore_sound_audio_index)
-                .expect("iocore_sound_audio_index"),
-        );
-        object.set(
-            "IOCore.sound.audioResamplerFirstPassFactor",
-            JsValueEncoder::encode(self.iocore_sound_audio_resampler_first_pass_factor)
-                .expect("iocore_sound_audio_resampler_first_pass_factor"),
-        );
-        object.set(
-            "IOCore.sound.audioTicks",
-            JsValueEncoder::encode(self.iocore_sound_audio_ticks)
-                .expect("iocore_sound_audio_ticks"),
-        );
-        object.set(
-            "IOCore.sound.CGBMixerOutputCacheLeft",
-            JsValueEncoder::encode(self.iocore_sound_cgbmixer_output_cache_left)
-                .expect("iocore_sound_cgbmixer_output_cache_left"),
-        );
-        object.set(
-            "IOCore.sound.CGBMixerOutputCacheLeftFolded",
-            JsValueEncoder::encode(self.iocore_sound_cgbmixer_output_cache_left_folded)
-                .expect("iocore_sound_cgbmixer_output_cache_left_folded"),
-        );
-        object.set(
-            "IOCore.sound.CGBMixerOutputCacheRight",
-            JsValueEncoder::encode(self.iocore_sound_cgbmixer_output_cache_right)
-                .expect("iocore_sound_cgbmixer_output_cache_right"),
-        );
-        object.set(
-            "IOCore.sound.CGBMixerOutputCacheRightFolded",
-            JsValueEncoder::encode(self.iocore_sound_cgbmixer_output_cache_right_folded)
-                .expect("iocore_sound_cgbmixer_output_cache_right_folded"),
-        );
-        object.set(
-            "IOCore.sound.CGBOutputRatio",
-            JsValueEncoder::encode(self.iocore_sound_cgboutput_ratio)
-                .expect("iocore_sound_cgboutput_ratio"),
-        );
-        object.set(
-            "IOCore.sound.channel1.CachedDuty",
-            JsValueEncoder::encode(self.iocore_sound_channel1_cached_duty)
-                .expect("iocore_sound_channel1_cached_duty"),
-        );
-        object.set(
-            "IOCore.sound.channel1.canPlay",
-            JsValueEncoder::encode(self.iocore_sound_channel1_can_play)
-                .expect("iocore_sound_channel1_can_play"),
-        );
-        object.set(
-            "IOCore.sound.channel1.consecutive",
-            JsValueEncoder::encode(self.iocore_sound_channel1_consecutive)
-                .expect("iocore_sound_channel1_consecutive"),
-        );
-        object.set(
-            "IOCore.sound.channel1.currentSampleLeft",
-            JsValueEncoder::encode(self.iocore_sound_channel1_current_sample_left)
-                .expect("iocore_sound_channel1_current_sample_left"),
-        );
-        object.set(
-            "IOCore.sound.channel1.currentSampleRight",
-            JsValueEncoder::encode(self.iocore_sound_channel1_current_sample_right)
-                .expect("iocore_sound_channel1_current_sample_right"),
-        );
-        object.set(
-            "IOCore.sound.channel1.decreaseSweep",
-            JsValueEncoder::encode(self.iocore_sound_channel1_decrease_sweep)
-                .expect("iocore_sound_channel1_decrease_sweep"),
-        );
-        object.set(
-            "IOCore.sound.channel1.DutyTracker",
-            JsValueEncoder::encode(self.iocore_sound_channel1_duty_tracker)
-                .expect("iocore_sound_channel1_duty_tracker"),
-        );
-        object.set(
-            "IOCore.sound.channel1.Enabled",
-            JsValueEncoder::encode(self.iocore_sound_channel1_enabled)
-                .expect("iocore_sound_channel1_enabled"),
-        );
-        object.set(
-            "IOCore.sound.channel1.envelopeSweeps",
-            JsValueEncoder::encode(self.iocore_sound_channel1_envelope_sweeps)
-                .expect("iocore_sound_channel1_envelope_sweeps"),
-        );
-        object.set(
-            "IOCore.sound.channel1.envelopeSweepsLast",
-            JsValueEncoder::encode(self.iocore_sound_channel1_envelope_sweeps_last)
-                .expect("iocore_sound_channel1_envelope_sweeps_last"),
-        );
-        object.set(
-            "IOCore.sound.channel1.envelopeVolume",
-            JsValueEncoder::encode(self.iocore_sound_channel1_envelope_volume)
-                .expect("iocore_sound_channel1_envelope_volume"),
-        );
-        object.set(
-            "IOCore.sound.channel1.frequency",
-            JsValueEncoder::encode(self.iocore_sound_channel1_frequency)
-                .expect("iocore_sound_channel1_frequency"),
-        );
-        object.set(
-            "IOCore.sound.channel1.FrequencyCounter",
-            JsValueEncoder::encode(self.iocore_sound_channel1_frequency_counter)
-                .expect("iocore_sound_channel1_frequency_counter"),
-        );
-        object.set(
-            "IOCore.sound.channel1.frequencySweepDivider",
-            JsValueEncoder::encode(self.iocore_sound_channel1_frequency_sweep_divider)
-                .expect("iocore_sound_channel1_frequency_sweep_divider"),
-        );
-        object.set(
-            "IOCore.sound.channel1.FrequencyTracker",
-            JsValueEncoder::encode(self.iocore_sound_channel1_frequency_tracker)
-                .expect("iocore_sound_channel1_frequency_tracker"),
-        );
-        object.set(
-            "IOCore.sound.channel1.lastTimeSweep",
-            JsValueEncoder::encode(self.iocore_sound_channel1_last_time_sweep)
-                .expect("iocore_sound_channel1_last_time_sweep"),
-        );
-        object.set(
-            "IOCore.sound.channel1.leftEnable",
-            JsValueEncoder::encode(self.iocore_sound_channel1_left_enable)
-                .expect("iocore_sound_channel1_left_enable"),
-        );
-        object.set(
-            "IOCore.sound.channel1.nr10",
-            JsValueEncoder::encode(self.iocore_sound_channel1_nr10)
-                .expect("iocore_sound_channel1_nr10"),
-        );
-        object.set(
-            "IOCore.sound.channel1.nr11",
-            JsValueEncoder::encode(self.iocore_sound_channel1_nr11)
-                .expect("iocore_sound_channel1_nr11"),
-        );
-        object.set(
-            "IOCore.sound.channel1.nr12",
-            JsValueEncoder::encode(self.iocore_sound_channel1_nr12)
-                .expect("iocore_sound_channel1_nr12"),
-        );
-        object.set(
-            "IOCore.sound.channel1.nr14",
-            JsValueEncoder::encode(self.iocore_sound_channel1_nr14)
-                .expect("iocore_sound_channel1_nr14"),
-        );
-        object.set(
-            "IOCore.sound.channel1.rightEnable",
-            JsValueEncoder::encode(self.iocore_sound_channel1_right_enable)
-                .expect("iocore_sound_channel1_right_enable"),
-        );
-        object.set(
-            "IOCore.sound.channel1.ShadowFrequency",
-            JsValueEncoder::encode(self.iocore_sound_channel1_shadow_frequency)
-                .expect("iocore_sound_channel1_shadow_frequency"),
-        );
-        object.set(
-            "IOCore.sound.channel1.SweepFault",
-            JsValueEncoder::encode(self.iocore_sound_channel1_sweep_fault)
-                .expect("iocore_sound_channel1_sweep_fault"),
-        );
-        object.set(
-            "IOCore.sound.channel1.Swept",
-            JsValueEncoder::encode(self.iocore_sound_channel1_swept)
-                .expect("iocore_sound_channel1_swept"),
-        );
-        object.set(
-            "IOCore.sound.channel1.timeSweep",
-            JsValueEncoder::encode(self.iocore_sound_channel1_time_sweep)
-                .expect("iocore_sound_channel1_time_sweep"),
-        );
-        object.set(
-            "IOCore.sound.channel1.totalLength",
-            JsValueEncoder::encode(self.iocore_sound_channel1_total_length)
-                .expect("iocore_sound_channel1_total_length"),
-        );
-        object.set(
-            "IOCore.sound.channel2.nr21",
-            JsValueEncoder::encode(self.iocore_sound_channel2_nr21)
-                .expect("iocore_sound_channel2_nr21"),
-        );
-        object.set(
-            "IOCore.sound.channel2.nr22",
-            JsValueEncoder::encode(self.iocore_sound_channel2_nr22)
-                .expect("iocore_sound_channel2_nr22"),
-        );
-        object.set(
-            "IOCore.sound.channel2.nr23",
-            JsValueEncoder::encode(self.iocore_sound_channel2_nr23)
-                .expect("iocore_sound_channel2_nr23"),
-        );
-        object.set(
-            "IOCore.sound.channel2.nr24",
-            JsValueEncoder::encode(self.iocore_sound_channel2_nr24)
-                .expect("iocore_sound_channel2_nr24"),
-        );
-        object.set(
-            "IOCore.sound.channel2.ShadowFrequency",
-            JsValueEncoder::encode(self.iocore_sound_channel2_shadow_frequency)
-                .expect("iocore_sound_channel2_shadow_frequency"),
-        );
-        object.set(
-            "IOCore.sound.channel3.cachedSample",
-            JsValueEncoder::encode(self.iocore_sound_channel3_cached_sample)
-                .expect("iocore_sound_channel3_cached_sample"),
-        );
-        object.set(
-            "IOCore.sound.channel3.canPlay",
-            JsValueEncoder::encode(self.iocore_sound_channel3_can_play)
-                .expect("iocore_sound_channel3_can_play"),
-        );
-        object.set(
-            "IOCore.sound.channel3.counter",
-            JsValueEncoder::encode(self.iocore_sound_channel3_counter)
-                .expect("iocore_sound_channel3_counter"),
-        );
-        object.set(
-            "IOCore.sound.channel3.FrequencyPeriod",
-            JsValueEncoder::encode(self.iocore_sound_channel3_frequency_period)
-                .expect("iocore_sound_channel3_frequency_period"),
-        );
-        object.set(
-            "IOCore.sound.channel3.lastSampleLookup",
-            JsValueEncoder::encode(self.iocore_sound_channel3_last_sample_lookup)
-                .expect("iocore_sound_channel3_last_sample_lookup"),
-        );
-        object.set(
-            "IOCore.sound.channel3.nr30",
-            JsValueEncoder::encode(self.iocore_sound_channel3_nr30)
-                .expect("iocore_sound_channel3_nr30"),
-        );
-        object.set(
-            "IOCore.sound.channel3.nr31",
-            JsValueEncoder::encode(self.iocore_sound_channel3_nr31)
-                .expect("iocore_sound_channel3_nr31"),
-        );
-        object.set(
-            "IOCore.sound.channel3.nr32",
-            JsValueEncoder::encode(self.iocore_sound_channel3_nr32)
-                .expect("iocore_sound_channel3_nr32"),
-        );
-        object.set(
-            "IOCore.sound.channel3.nr33",
-            JsValueEncoder::encode(self.iocore_sound_channel3_nr33)
-                .expect("iocore_sound_channel3_nr33"),
-        );
-        object.set(
-            "IOCore.sound.channel3.nr34",
-            JsValueEncoder::encode(self.iocore_sound_channel3_nr34)
-                .expect("iocore_sound_channel3_nr34"),
-        );
-        object.set(
-            "IOCore.sound.channel3.patternType",
-            JsValueEncoder::encode(self.iocore_sound_channel3_pattern_type)
-                .expect("iocore_sound_channel3_pattern_type"),
-        );
-        object.set(
-            "IOCore.sound.channel3.PCM",
-            JsValueEncoder::encode(self.iocore_sound_channel3_pcm)
-                .expect("iocore_sound_channel3_pcm"),
-        );
-        object.set(
-            "IOCore.sound.channel3.PCM16",
-            JsValueEncoder::encode(self.iocore_sound_channel3_pcm16)
-                .expect("iocore_sound_channel3_pcm16"),
-        );
-        object.set(
-            "IOCore.sound.channel3.PCM32",
-            JsValueEncoder::encode(self.iocore_sound_channel3_pcm32)
-                .expect("iocore_sound_channel3_pcm32"),
-        );
-        object.set(
-            "IOCore.sound.channel3.WAVERAM16",
-            JsValueEncoder::encode(self.iocore_sound_channel3_waveram16)
-                .expect("iocore_sound_channel3_waveram16"),
-        );
-        object.set(
-            "IOCore.sound.channel3.WAVERAM32",
-            JsValueEncoder::encode(self.iocore_sound_channel3_waveram32)
-                .expect("iocore_sound_channel3_waveram32"),
-        );
-        object.set(
-            "IOCore.sound.channel3.WAVERAM8",
-            JsValueEncoder::encode(self.iocore_sound_channel3_waveram8)
-                .expect("iocore_sound_channel3_waveram8"),
-        );
-        object.set(
-            "IOCore.sound.channel3.WAVERAMBankAccessed",
-            JsValueEncoder::encode(self.iocore_sound_channel3_waverambank_accessed)
-                .expect("iocore_sound_channel3_waverambank_accessed"),
-        );
-        object.set(
-            "IOCore.sound.channel3.WaveRAMBankSize",
-            JsValueEncoder::encode(self.iocore_sound_channel3_wave_rambank_size)
-                .expect("iocore_sound_channel3_wave_rambank_size"),
-        );
-        object.set(
-            "IOCore.sound.channel3.WAVERAMBankSpecified",
-            JsValueEncoder::encode(self.iocore_sound_channel3_waverambank_specified)
-                .expect("iocore_sound_channel3_waverambank_specified"),
-        );
-        object.set(
-            "IOCore.sound.channel4.BitRange",
-            JsValueEncoder::encode(self.iocore_sound_channel4_bit_range)
-                .expect("iocore_sound_channel4_bit_range"),
-        );
-        object.set(
-            "IOCore.sound.channel4.counter",
-            JsValueEncoder::encode(self.iocore_sound_channel4_counter)
-                .expect("iocore_sound_channel4_counter"),
-        );
-        object.set(
-            "IOCore.sound.channel4.currentVolume",
-            JsValueEncoder::encode(self.iocore_sound_channel4_current_volume)
-                .expect("iocore_sound_channel4_current_volume"),
-        );
-        object.set(
-            "IOCore.sound.channel4.FrequencyPeriod",
-            JsValueEncoder::encode(self.iocore_sound_channel4_frequency_period)
-                .expect("iocore_sound_channel4_frequency_period"),
-        );
-        object.set(
-            "IOCore.sound.channel4.lastSampleLookup",
-            JsValueEncoder::encode(self.iocore_sound_channel4_last_sample_lookup)
-                .expect("iocore_sound_channel4_last_sample_lookup"),
-        );
-        object.set(
-            "IOCore.sound.channel4.LSFR15Table",
-            JsValueEncoder::encode(self.iocore_sound_channel4_lsfr15_table)
-                .expect("iocore_sound_channel4_lsfr15_table"),
-        );
-        object.set(
-            "IOCore.sound.channel4.LSFR7Table",
-            JsValueEncoder::encode(self.iocore_sound_channel4_lsfr7_table)
-                .expect("iocore_sound_channel4_lsfr7_table"),
-        );
-        object.set(
-            "IOCore.sound.channel4.noiseSampleTable",
-            JsValueEncoder::encode(self.iocore_sound_channel4_noise_sample_table)
-                .expect("iocore_sound_channel4_noise_sample_table"),
-        );
-        object.set(
-            "IOCore.sound.channel4.nr42",
-            JsValueEncoder::encode(self.iocore_sound_channel4_nr42)
-                .expect("iocore_sound_channel4_nr42"),
-        );
-        object.set(
-            "IOCore.sound.channel4.nr43",
-            JsValueEncoder::encode(self.iocore_sound_channel4_nr43)
-                .expect("iocore_sound_channel4_nr43"),
-        );
-        object.set(
-            "IOCore.sound.channel4.nr44",
-            JsValueEncoder::encode(self.iocore_sound_channel4_nr44)
-                .expect("iocore_sound_channel4_nr44"),
-        );
-        object.set(
-            "IOCore.sound.channel4.VolumeShifter",
-            JsValueEncoder::encode(self.iocore_sound_channel4_volume_shifter)
-                .expect("iocore_sound_channel4_volume_shifter"),
-        );
-        object.set(
-            "IOCore.sound.downsampleInputLeft",
-            JsValueEncoder::encode(self.iocore_sound_downsample_input_left)
-                .expect("iocore_sound_downsample_input_left"),
-        );
-        object.set(
-            "IOCore.sound.downsampleInputRight",
-            JsValueEncoder::encode(self.iocore_sound_downsample_input_right)
-                .expect("iocore_sound_downsample_input_right"),
-        );
-        object.set(
-            "IOCore.sound.FIFOABuffer.buffer",
-            JsValueEncoder::encode(self.iocore_sound_fifoabuffer_buffer)
-                .expect("iocore_sound_fifoabuffer_buffer"),
-        );
-        object.set(
-            "IOCore.sound.FIFOABuffer.count",
-            JsValueEncoder::encode(self.iocore_sound_fifoabuffer_count)
-                .expect("iocore_sound_fifoabuffer_count"),
-        );
-        object.set(
-            "IOCore.sound.FIFOABuffer.position",
-            JsValueEncoder::encode(self.iocore_sound_fifoabuffer_position)
-                .expect("iocore_sound_fifoabuffer_position"),
-        );
-        object.set(
-            "IOCore.sound.FIFOBBuffer.buffer",
-            JsValueEncoder::encode(self.iocore_sound_fifobbuffer_buffer)
-                .expect("iocore_sound_fifobbuffer_buffer"),
-        );
-        object.set(
-            "IOCore.sound.mixerOutputCacheLeft",
-            JsValueEncoder::encode(self.iocore_sound_mixer_output_cache_left)
-                .expect("iocore_sound_mixer_output_cache_left"),
-        );
-        object.set(
-            "IOCore.sound.mixerOutputCacheRight",
-            JsValueEncoder::encode(self.iocore_sound_mixer_output_cache_right)
-                .expect("iocore_sound_mixer_output_cache_right"),
-        );
-        object.set(
-            "IOCore.sound.mixerSoundBIAS",
-            JsValueEncoder::encode(self.iocore_sound_mixer_sound_bias)
-                .expect("iocore_sound_mixer_sound_bias"),
-        );
-        object.set(
-            "IOCore.sound.nr50",
-            JsValueEncoder::encode(self.iocore_sound_nr50).expect("iocore_sound_nr50"),
-        );
-        object.set(
-            "IOCore.sound.nr51",
-            JsValueEncoder::encode(self.iocore_sound_nr51).expect("iocore_sound_nr51"),
-        );
-        object.set(
-            "IOCore.sound.nr52",
-            JsValueEncoder::encode(self.iocore_sound_nr52).expect("iocore_sound_nr52"),
-        );
-        object.set(
-            "IOCore.sound.nr60",
-            JsValueEncoder::encode(self.iocore_sound_nr60).expect("iocore_sound_nr60"),
-        );
-        object.set(
-            "IOCore.sound.nr61",
-            JsValueEncoder::encode(self.iocore_sound_nr61).expect("iocore_sound_nr61"),
-        );
-        object.set(
-            "IOCore.sound.nr62",
-            JsValueEncoder::encode(self.iocore_sound_nr62).expect("iocore_sound_nr62"),
-        );
-        object.set(
-            "IOCore.sound.nr63",
-            JsValueEncoder::encode(self.iocore_sound_nr63).expect("iocore_sound_nr63"),
-        );
-        object.set(
-            "IOCore.sound.PWMBitDepthMask",
-            JsValueEncoder::encode(self.iocore_sound_pwmbit_depth_mask)
-                .expect("iocore_sound_pwmbit_depth_mask"),
-        );
-        object.set(
-            "IOCore.sound.PWMBitDepthMaskShadow",
-            JsValueEncoder::encode(self.iocore_sound_pwmbit_depth_mask_shadow)
-                .expect("iocore_sound_pwmbit_depth_mask_shadow"),
-        );
-        object.set(
-            "IOCore.sound.PWMWidth",
-            JsValueEncoder::encode(self.iocore_sound_pwmwidth).expect("iocore_sound_pwmwidth"),
-        );
-        object.set(
-            "IOCore.sound.PWMWidthOld",
-            JsValueEncoder::encode(self.iocore_sound_pwmwidth_old)
-                .expect("iocore_sound_pwmwidth_old"),
-        );
-        object.set(
-            "IOCore.sound.PWMWidthShadow",
-            JsValueEncoder::encode(self.iocore_sound_pwmwidth_shadow)
-                .expect("iocore_sound_pwmwidth_shadow"),
-        );
-        object.set(
-            "IOCore.sound.sequencePosition",
-            JsValueEncoder::encode(self.iocore_sound_sequence_position)
-                .expect("iocore_sound_sequence_position"),
-        );
-        object.set(
-            "IOCore.sound.sequencerClocks",
-            JsValueEncoder::encode(self.iocore_sound_sequencer_clocks)
-                .expect("iocore_sound_sequencer_clocks"),
-        );
-        object.set(
-            "IOCore.sound.soundMasterEnabled",
-            JsValueEncoder::encode(self.iocore_sound_sound_master_enabled)
-                .expect("iocore_sound_sound_master_enabled"),
-        );
-        object.set(
-            "IOCore.sound.VinLeftChannelMasterVolume",
-            JsValueEncoder::encode(self.iocore_sound_vin_left_channel_master_volume)
-                .expect("iocore_sound_vin_left_channel_master_volume"),
-        );
-        object.set(
-            "IOCore.sound.VinRightChannelMasterVolume",
-            JsValueEncoder::encode(self.iocore_sound_vin_right_channel_master_volume)
-                .expect("iocore_sound_vin_right_channel_master_volume"),
-        );
+        // object.set(
+        //     "IOCore.sound.AGBDirectSoundA",
+        //     JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_a)
+        //         .expect("iocore_sound_agbdirect_sound_a"),
+        // );
+        // object.set(
+        //     "IOCore.sound.AGBDirectSoundAFolded",
+        //     JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_afolded)
+        //         .expect("iocore_sound_agbdirect_sound_afolded"),
+        // );
+        // object.set(
+        //     "IOCore.sound.AGBDirectSoundALeftCanPlay",
+        //     JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_aleft_can_play)
+        //         .expect("iocore_sound_agbdirect_sound_aleft_can_play"),
+        // );
+        // object.set(
+        //     "IOCore.sound.AGBDirectSoundARightCanPlay",
+        //     JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_aright_can_play)
+        //         .expect("iocore_sound_agbdirect_sound_aright_can_play"),
+        // );
+        // object.set(
+        //     "IOCore.sound.AGBDirectSoundAShifter",
+        //     JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_ashifter)
+        //         .expect("iocore_sound_agbdirect_sound_ashifter"),
+        // );
+        // object.set(
+        //     "IOCore.sound.AGBDirectSoundATimer",
+        //     JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_atimer)
+        //         .expect("iocore_sound_agbdirect_sound_atimer"),
+        // );
+        // object.set(
+        //     "IOCore.sound.AGBDirectSoundB",
+        //     JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_b)
+        //         .expect("iocore_sound_agbdirect_sound_b"),
+        // );
+        // object.set(
+        //     "IOCore.sound.AGBDirectSoundBFolded",
+        //     JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_bfolded)
+        //         .expect("iocore_sound_agbdirect_sound_bfolded"),
+        // );
+        // object.set(
+        //     "IOCore.sound.AGBDirectSoundBLeftCanPlay",
+        //     JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_bleft_can_play)
+        //         .expect("iocore_sound_agbdirect_sound_bleft_can_play"),
+        // );
+        // object.set(
+        //     "IOCore.sound.AGBDirectSoundBRightCanPlay",
+        //     JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_bright_can_play)
+        //         .expect("iocore_sound_agbdirect_sound_bright_can_play"),
+        // );
+        // object.set(
+        //     "IOCore.sound.AGBDirectSoundBShifter",
+        //     JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_bshifter)
+        //         .expect("iocore_sound_agbdirect_sound_bshifter"),
+        // );
+        // object.set(
+        //     "IOCore.sound.AGBDirectSoundBTimer",
+        //     JsValueEncoder::encode(self.iocore_sound_agbdirect_sound_btimer)
+        //         .expect("iocore_sound_agbdirect_sound_btimer"),
+        // );
+        // object.set(
+        //     "IOCore.sound.audioClocksUntilNextEvent",
+        //     JsValueEncoder::encode(self.iocore_sound_audio_clocks_until_next_event)
+        //         .expect("iocore_sound_audio_clocks_until_next_event"),
+        // );
+        // object.set(
+        //     "IOCore.sound.audioClocksUntilNextEventCounter",
+        //     JsValueEncoder::encode(self.iocore_sound_audio_clocks_until_next_event_counter)
+        //         .expect("iocore_sound_audio_clocks_until_next_event_counter"),
+        // );
+        // object.set(
+        //     "IOCore.sound.audioIndex",
+        //     JsValueEncoder::encode(self.iocore_sound_audio_index)
+        //         .expect("iocore_sound_audio_index"),
+        // );
+        // object.set(
+        //     "IOCore.sound.audioResamplerFirstPassFactor",
+        //     JsValueEncoder::encode(self.iocore_sound_audio_resampler_first_pass_factor)
+        //         .expect("iocore_sound_audio_resampler_first_pass_factor"),
+        // );
+        // object.set(
+        //     "IOCore.sound.audioTicks",
+        //     JsValueEncoder::encode(self.iocore_sound_audio_ticks)
+        //         .expect("iocore_sound_audio_ticks"),
+        // );
+        // object.set(
+        //     "IOCore.sound.CGBMixerOutputCacheLeft",
+        //     JsValueEncoder::encode(self.iocore_sound_cgbmixer_output_cache_left)
+        //         .expect("iocore_sound_cgbmixer_output_cache_left"),
+        // );
+        // object.set(
+        //     "IOCore.sound.CGBMixerOutputCacheLeftFolded",
+        //     JsValueEncoder::encode(self.iocore_sound_cgbmixer_output_cache_left_folded)
+        //         .expect("iocore_sound_cgbmixer_output_cache_left_folded"),
+        // );
+        // object.set(
+        //     "IOCore.sound.CGBMixerOutputCacheRight",
+        //     JsValueEncoder::encode(self.iocore_sound_cgbmixer_output_cache_right)
+        //         .expect("iocore_sound_cgbmixer_output_cache_right"),
+        // );
+        // object.set(
+        //     "IOCore.sound.CGBMixerOutputCacheRightFolded",
+        //     JsValueEncoder::encode(self.iocore_sound_cgbmixer_output_cache_right_folded)
+        //         .expect("iocore_sound_cgbmixer_output_cache_right_folded"),
+        // );
+        // object.set(
+        //     "IOCore.sound.CGBOutputRatio",
+        //     JsValueEncoder::encode(self.iocore_sound_cgboutput_ratio)
+        //         .expect("iocore_sound_cgboutput_ratio"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.CachedDuty",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_cached_duty)
+        //         .expect("iocore_sound_channel1_cached_duty"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.canPlay",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_can_play)
+        //         .expect("iocore_sound_channel1_can_play"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.consecutive",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_consecutive)
+        //         .expect("iocore_sound_channel1_consecutive"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.currentSampleLeft",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_current_sample_left)
+        //         .expect("iocore_sound_channel1_current_sample_left"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.currentSampleRight",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_current_sample_right)
+        //         .expect("iocore_sound_channel1_current_sample_right"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.decreaseSweep",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_decrease_sweep)
+        //         .expect("iocore_sound_channel1_decrease_sweep"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.DutyTracker",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_duty_tracker)
+        //         .expect("iocore_sound_channel1_duty_tracker"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.Enabled",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_enabled)
+        //         .expect("iocore_sound_channel1_enabled"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.envelopeSweeps",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_envelope_sweeps)
+        //         .expect("iocore_sound_channel1_envelope_sweeps"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.envelopeSweepsLast",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_envelope_sweeps_last)
+        //         .expect("iocore_sound_channel1_envelope_sweeps_last"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.envelopeVolume",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_envelope_volume)
+        //         .expect("iocore_sound_channel1_envelope_volume"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.frequency",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_frequency)
+        //         .expect("iocore_sound_channel1_frequency"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.FrequencyCounter",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_frequency_counter)
+        //         .expect("iocore_sound_channel1_frequency_counter"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.frequencySweepDivider",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_frequency_sweep_divider)
+        //         .expect("iocore_sound_channel1_frequency_sweep_divider"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.FrequencyTracker",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_frequency_tracker)
+        //         .expect("iocore_sound_channel1_frequency_tracker"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.lastTimeSweep",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_last_time_sweep)
+        //         .expect("iocore_sound_channel1_last_time_sweep"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.leftEnable",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_left_enable)
+        //         .expect("iocore_sound_channel1_left_enable"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.nr10",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_nr10)
+        //         .expect("iocore_sound_channel1_nr10"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.nr11",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_nr11)
+        //         .expect("iocore_sound_channel1_nr11"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.nr12",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_nr12)
+        //         .expect("iocore_sound_channel1_nr12"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.nr14",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_nr14)
+        //         .expect("iocore_sound_channel1_nr14"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.rightEnable",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_right_enable)
+        //         .expect("iocore_sound_channel1_right_enable"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.ShadowFrequency",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_shadow_frequency)
+        //         .expect("iocore_sound_channel1_shadow_frequency"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.SweepFault",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_sweep_fault)
+        //         .expect("iocore_sound_channel1_sweep_fault"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.Swept",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_swept)
+        //         .expect("iocore_sound_channel1_swept"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.timeSweep",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_time_sweep)
+        //         .expect("iocore_sound_channel1_time_sweep"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel1.totalLength",
+        //     JsValueEncoder::encode(self.iocore_sound_channel1_total_length)
+        //         .expect("iocore_sound_channel1_total_length"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel2.nr21",
+        //     JsValueEncoder::encode(self.iocore_sound_channel2_nr21)
+        //         .expect("iocore_sound_channel2_nr21"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel2.nr22",
+        //     JsValueEncoder::encode(self.iocore_sound_channel2_nr22)
+        //         .expect("iocore_sound_channel2_nr22"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel2.nr23",
+        //     JsValueEncoder::encode(self.iocore_sound_channel2_nr23)
+        //         .expect("iocore_sound_channel2_nr23"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel2.nr24",
+        //     JsValueEncoder::encode(self.iocore_sound_channel2_nr24)
+        //         .expect("iocore_sound_channel2_nr24"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel2.ShadowFrequency",
+        //     JsValueEncoder::encode(self.iocore_sound_channel2_shadow_frequency)
+        //         .expect("iocore_sound_channel2_shadow_frequency"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.cachedSample",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_cached_sample)
+        //         .expect("iocore_sound_channel3_cached_sample"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.canPlay",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_can_play)
+        //         .expect("iocore_sound_channel3_can_play"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.counter",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_counter)
+        //         .expect("iocore_sound_channel3_counter"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.FrequencyPeriod",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_frequency_period)
+        //         .expect("iocore_sound_channel3_frequency_period"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.lastSampleLookup",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_last_sample_lookup)
+        //         .expect("iocore_sound_channel3_last_sample_lookup"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.nr30",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_nr30)
+        //         .expect("iocore_sound_channel3_nr30"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.nr31",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_nr31)
+        //         .expect("iocore_sound_channel3_nr31"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.nr32",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_nr32)
+        //         .expect("iocore_sound_channel3_nr32"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.nr33",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_nr33)
+        //         .expect("iocore_sound_channel3_nr33"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.nr34",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_nr34)
+        //         .expect("iocore_sound_channel3_nr34"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.patternType",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_pattern_type)
+        //         .expect("iocore_sound_channel3_pattern_type"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.PCM",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_pcm)
+        //         .expect("iocore_sound_channel3_pcm"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.PCM16",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_pcm16)
+        //         .expect("iocore_sound_channel3_pcm16"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.PCM32",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_pcm32)
+        //         .expect("iocore_sound_channel3_pcm32"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.WAVERAM16",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_waveram16)
+        //         .expect("iocore_sound_channel3_waveram16"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.WAVERAM32",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_waveram32)
+        //         .expect("iocore_sound_channel3_waveram32"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.WAVERAM8",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_waveram8)
+        //         .expect("iocore_sound_channel3_waveram8"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.WAVERAMBankAccessed",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_waverambank_accessed)
+        //         .expect("iocore_sound_channel3_waverambank_accessed"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.WaveRAMBankSize",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_wave_rambank_size)
+        //         .expect("iocore_sound_channel3_wave_rambank_size"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel3.WAVERAMBankSpecified",
+        //     JsValueEncoder::encode(self.iocore_sound_channel3_waverambank_specified)
+        //         .expect("iocore_sound_channel3_waverambank_specified"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel4.BitRange",
+        //     JsValueEncoder::encode(self.iocore_sound_channel4_bit_range)
+        //         .expect("iocore_sound_channel4_bit_range"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel4.counter",
+        //     JsValueEncoder::encode(self.iocore_sound_channel4_counter)
+        //         .expect("iocore_sound_channel4_counter"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel4.currentVolume",
+        //     JsValueEncoder::encode(self.iocore_sound_channel4_current_volume)
+        //         .expect("iocore_sound_channel4_current_volume"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel4.FrequencyPeriod",
+        //     JsValueEncoder::encode(self.iocore_sound_channel4_frequency_period)
+        //         .expect("iocore_sound_channel4_frequency_period"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel4.lastSampleLookup",
+        //     JsValueEncoder::encode(self.iocore_sound_channel4_last_sample_lookup)
+        //         .expect("iocore_sound_channel4_last_sample_lookup"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel4.LSFR15Table",
+        //     JsValueEncoder::encode(self.iocore_sound_channel4_lsfr15_table)
+        //         .expect("iocore_sound_channel4_lsfr15_table"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel4.LSFR7Table",
+        //     JsValueEncoder::encode(self.iocore_sound_channel4_lsfr7_table)
+        //         .expect("iocore_sound_channel4_lsfr7_table"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel4.noiseSampleTable",
+        //     JsValueEncoder::encode(self.iocore_sound_channel4_noise_sample_table)
+        //         .expect("iocore_sound_channel4_noise_sample_table"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel4.nr42",
+        //     JsValueEncoder::encode(self.iocore_sound_channel4_nr42)
+        //         .expect("iocore_sound_channel4_nr42"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel4.nr43",
+        //     JsValueEncoder::encode(self.iocore_sound_channel4_nr43)
+        //         .expect("iocore_sound_channel4_nr43"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel4.nr44",
+        //     JsValueEncoder::encode(self.iocore_sound_channel4_nr44)
+        //         .expect("iocore_sound_channel4_nr44"),
+        // );
+        // object.set(
+        //     "IOCore.sound.channel4.VolumeShifter",
+        //     JsValueEncoder::encode(self.iocore_sound_channel4_volume_shifter)
+        //         .expect("iocore_sound_channel4_volume_shifter"),
+        // );
+        // object.set(
+        //     "IOCore.sound.downsampleInputLeft",
+        //     JsValueEncoder::encode(self.iocore_sound_downsample_input_left)
+        //         .expect("iocore_sound_downsample_input_left"),
+        // );
+        // object.set(
+        //     "IOCore.sound.downsampleInputRight",
+        //     JsValueEncoder::encode(self.iocore_sound_downsample_input_right)
+        //         .expect("iocore_sound_downsample_input_right"),
+        // );
+        // object.set(
+        //     "IOCore.sound.FIFOABuffer.buffer",
+        //     JsValueEncoder::encode(self.iocore_sound_fifoabuffer_buffer)
+        //         .expect("iocore_sound_fifoabuffer_buffer"),
+        // );
+        // object.set(
+        //     "IOCore.sound.FIFOABuffer.count",
+        //     JsValueEncoder::encode(self.iocore_sound_fifoabuffer_count)
+        //         .expect("iocore_sound_fifoabuffer_count"),
+        // );
+        // object.set(
+        //     "IOCore.sound.FIFOABuffer.position",
+        //     JsValueEncoder::encode(self.iocore_sound_fifoabuffer_position)
+        //         .expect("iocore_sound_fifoabuffer_position"),
+        // );
+        // object.set(
+        //     "IOCore.sound.FIFOBBuffer.buffer",
+        //     JsValueEncoder::encode(self.iocore_sound_fifobbuffer_buffer)
+        //         .expect("iocore_sound_fifobbuffer_buffer"),
+        // );
+        // object.set(
+        //     "IOCore.sound.mixerOutputCacheLeft",
+        //     JsValueEncoder::encode(self.iocore_sound_mixer_output_cache_left)
+        //         .expect("iocore_sound_mixer_output_cache_left"),
+        // );
+        // object.set(
+        //     "IOCore.sound.mixerOutputCacheRight",
+        //     JsValueEncoder::encode(self.iocore_sound_mixer_output_cache_right)
+        //         .expect("iocore_sound_mixer_output_cache_right"),
+        // );
+        // object.set(
+        //     "IOCore.sound.mixerSoundBIAS",
+        //     JsValueEncoder::encode(self.iocore_sound_mixer_sound_bias)
+        //         .expect("iocore_sound_mixer_sound_bias"),
+        // );
+        // object.set(
+        //     "IOCore.sound.nr50",
+        //     JsValueEncoder::encode(self.iocore_sound_nr50).expect("iocore_sound_nr50"),
+        // );
+        // object.set(
+        //     "IOCore.sound.nr51",
+        //     JsValueEncoder::encode(self.iocore_sound_nr51).expect("iocore_sound_nr51"),
+        // );
+        // object.set(
+        //     "IOCore.sound.nr52",
+        //     JsValueEncoder::encode(self.iocore_sound_nr52).expect("iocore_sound_nr52"),
+        // );
+        // object.set(
+        //     "IOCore.sound.nr60",
+        //     JsValueEncoder::encode(self.iocore_sound_nr60).expect("iocore_sound_nr60"),
+        // );
+        // object.set(
+        //     "IOCore.sound.nr61",
+        //     JsValueEncoder::encode(self.iocore_sound_nr61).expect("iocore_sound_nr61"),
+        // );
+        // object.set(
+        //     "IOCore.sound.nr62",
+        //     JsValueEncoder::encode(self.iocore_sound_nr62).expect("iocore_sound_nr62"),
+        // );
+        // object.set(
+        //     "IOCore.sound.nr63",
+        //     JsValueEncoder::encode(self.iocore_sound_nr63).expect("iocore_sound_nr63"),
+        // );
+        // object.set(
+        //     "IOCore.sound.PWMBitDepthMask",
+        //     JsValueEncoder::encode(self.iocore_sound_pwmbit_depth_mask)
+        //         .expect("iocore_sound_pwmbit_depth_mask"),
+        // );
+        // object.set(
+        //     "IOCore.sound.PWMBitDepthMaskShadow",
+        //     JsValueEncoder::encode(self.iocore_sound_pwmbit_depth_mask_shadow)
+        //         .expect("iocore_sound_pwmbit_depth_mask_shadow"),
+        // );
+        // object.set(
+        //     "IOCore.sound.PWMWidth",
+        //     JsValueEncoder::encode(self.iocore_sound_pwmwidth).expect("iocore_sound_pwmwidth"),
+        // );
+        // object.set(
+        //     "IOCore.sound.PWMWidthOld",
+        //     JsValueEncoder::encode(self.iocore_sound_pwmwidth_old)
+        //         .expect("iocore_sound_pwmwidth_old"),
+        // );
+        // object.set(
+        //     "IOCore.sound.PWMWidthShadow",
+        //     JsValueEncoder::encode(self.iocore_sound_pwmwidth_shadow)
+        //         .expect("iocore_sound_pwmwidth_shadow"),
+        // );
+        // object.set(
+        //     "IOCore.sound.sequencePosition",
+        //     JsValueEncoder::encode(self.iocore_sound_sequence_position)
+        //         .expect("iocore_sound_sequence_position"),
+        // );
+        // object.set(
+        //     "IOCore.sound.sequencerClocks",
+        //     JsValueEncoder::encode(self.iocore_sound_sequencer_clocks)
+        //         .expect("iocore_sound_sequencer_clocks"),
+        // );
+        // object.set(
+        //     "IOCore.sound.soundMasterEnabled",
+        //     JsValueEncoder::encode(self.iocore_sound_sound_master_enabled)
+        //         .expect("iocore_sound_sound_master_enabled"),
+        // );
+        // object.set(
+        //     "IOCore.sound.VinLeftChannelMasterVolume",
+        //     JsValueEncoder::encode(self.iocore_sound_vin_left_channel_master_volume)
+        //         .expect("iocore_sound_vin_left_channel_master_volume"),
+        // );
+        // object.set(
+        //     "IOCore.sound.VinRightChannelMasterVolume",
+        //     JsValueEncoder::encode(self.iocore_sound_vin_right_channel_master_volume)
+        //         .expect("iocore_sound_vin_right_channel_master_volume"),
+        // );
         object.set(
             "IOCore.systemStatus",
             JsValueEncoder::encode(self.iocore_system_status).expect("iocore_system_status"),

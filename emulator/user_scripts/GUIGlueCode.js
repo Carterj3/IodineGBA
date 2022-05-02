@@ -253,7 +253,12 @@ function registerGUIEvents() {
                             if (this.readyState == 2) {
                                 writeRedTemporaryText("file imported.");
                                 try {
-                                    importSaveState(this.result);
+                                    const blob = this.result;
+                                    const state = IodineGUI.Iodine.SaveStates.snapshotter.deserialize_from_b64(blob);
+
+                                    fastLoad(state);
+                                    SaveStates.websocket.send(SaveStates.network.create_snapshot_message(SaveStates.snapshotter.serialize_to_uint8array(state)));
+                                    SaveStates.localSaveState = state;
                                 }
                                 catch (error) {
                                     writeRedTemporaryText(error.message + " file: " + error.fileName + " line: " + error.lineNumber);
@@ -269,7 +274,12 @@ function registerGUIEvents() {
                         //Gecko 1.9.0, 1.9.1 (Non-Standard Method)
                         var result = this.files[this.files.length - 1].getAsBinary();
                         try {
-                            importSaveState(result);
+                            const blob = this.result;
+                            const state = IodineGUI.Iodine.SaveStates.snapshotter.deserialize_from_b64(blob);
+
+                            fastLoad(state);
+                            SaveStates.websocket.send(SaveStates.network.create_snapshot_message(SaveStates.snapshotter.serialize_to_uint8array(state)));
+                            SaveStates.localSaveState = state;
                         }
                         catch (error) {
                             writeRedTemporaryText(error.message + " file: " + error.fileName + " line: " + error.lineNumber);

@@ -335,9 +335,12 @@
                 };
 
                 websocket.onclose = function () {
-                    alert("Connection is closed...");
+                    IodineGUI.Iodine.pause();
+                    setTimeout(() => {
+                        alert("Connection is closed...");
 
-                    IodineGUI.Iodine.SaveStates.websocket = configureWebsocket();
+                        IodineGUI.Iodine.SaveStates.websocket = configureWebsocket();
+                    }, 350)
                 };
 
                 return websocket;

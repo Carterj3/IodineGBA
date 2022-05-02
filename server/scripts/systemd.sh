@@ -5,7 +5,7 @@ After=network.target
 After=network-online.target 
 After=wg-quick@wg0.service
 [Service] 
-ExecStart=sudo RUST_LOG=debug /home/ubuntu/mengs/mengs
+ExecStart=sudo RUST_LOG=info /home/ubuntu/mengs/mengs /home/ubuntu/mengs/www
 TimeoutSec=30 
 Restart=always
 RestartSec=30
